@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct SettingsView: View {
-    static let MigrosColor:Color = Color(red: 255 / 255, green: 102 / 255, blue: 0 / 255)
+    static let MigrosColor:Color = Color(red: 255 / 255, green: 102 / 255, blue: 3   / 255)
+    static let MigrosColorCumulus:Color = Color(red: 0 / 255, green: 61 / 255, blue: 141 / 255)
 
     @State var user:User = OnboardingAPI.Instance.currentUser ?? User()
     @State var showingAlert:Bool

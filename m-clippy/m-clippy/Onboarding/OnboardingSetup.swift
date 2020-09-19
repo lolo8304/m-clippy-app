@@ -11,17 +11,23 @@ struct OnboardingSetup: View {
     @State var user:User
     
     var body: some View {
-        HStack {
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-        }
-        .padding(.all, 0)
-        .navigationBarTitle(Text("Settings \(self.user.Name())"))
-        .navigationViewStyle(StackNavigationViewStyle())
-        .navigationBarItems(
-            trailing: HStack {
-                Button(action:done, label: { Text("Done") })
+        ScrollView {
+            VStack {
+                ClippyImageHeader()
+                OnboardingHabits(habits: user.habits!, content: {
+                        Text("ddd")
+                })
+                Spacer()
             }
-        )
+            .padding(.all, 0)
+            .navigationBarTitle(Text("Clippy: \(self.user.Name())"))
+            .navigationViewStyle(StackNavigationViewStyle())
+            .navigationBarItems(
+                trailing: HStack {
+                    Button(action:done, label: { Text("Done") })
+                }
+            )
+        }
     }
     
     func done() {
