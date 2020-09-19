@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct OnboardingLocations: View {
-    @EnvironmentObject var api: OnboardingAPI
+    @EnvironmentObject var api: ClippyAPI
     @State var isRegional:Bool = true
     @State var isNational:Bool = false
     @State var isOutside:Bool = false
     
     var body: some View {
-        ClippyBox(title: "What do you prefer most?", subTitle:"(we will show you from where your consume)", backColor: SettingsView.MigrosColorCumulus, foreColor: Color.white, image: Image("location-OK") ) {
+        ClippyBox(title: "Local or remote economy?", subTitle:"(we will show you from where your product orginate)", backColor: SettingsView.MigrosColorWhite, foreColor: Color.black, image: Image("location-OK") ) {
             Toggle(isOn: $isRegional) {
                 Text("Regional")
             }.onChange(of: true, perform: { value in
@@ -55,7 +55,7 @@ struct OnboardingLocations: View {
 
 struct OnboardingLocations_Previews: PreviewProvider {
     static var previews: some View {
-        let api = OnboardingAPI.Instance
+        let api = ClippyAPI.Instance
         OnboardingLocations().environmentObject(api)
     }
 }

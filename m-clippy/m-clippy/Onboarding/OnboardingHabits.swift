@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OnboardingHabits: View {
-    @EnvironmentObject var api: OnboardingAPI
+    @EnvironmentObject var api: ClippyAPI
     
     var body: some View {
         ClippyBox(title: "I prefer the following food", subTitle:"(we will help you choosing the right products)", backColor: SettingsView.MigrosColorCumulus, foreColor: Color.white, image: Image("habits-OK") ) {
@@ -34,7 +34,7 @@ struct OnboardingHabits: View {
 
 struct OnboardingHabits_Previews: PreviewProvider {
     static var previews: some View {
-        let api = OnboardingAPI.Instance
+        let api = ClippyAPI.Instance
         OnboardingHabits().environmentObject(api)
     }
 }

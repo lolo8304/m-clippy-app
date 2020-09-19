@@ -27,8 +27,8 @@ public class AllergensBool : Codable, ObservableObject {
 
 
 struct OnboardingAllergies: View {
-    @EnvironmentObject var api: OnboardingAPI
-    @State var allergens: AllergensBool = AllergensBool(allergens: OnboardingAPI.Instance.staticAllergenes)
+    @EnvironmentObject var api: ClippyAPI
+    @State var allergens: AllergensBool = AllergensBool(allergens: ClippyAPI.Instance.staticAllergenes)
 
     var body: some View {
         ClippyBox(title: "I have food allergies or intolerances", subTitle:"(select and we will alert you while buying)", backColor: SettingsView.MigrosColor, foreColor: Color.white, image: Image("allergy-OK") ) {
@@ -45,7 +45,7 @@ struct OnboardingAllergies: View {
 
 struct OnboardingAllergies_Previews: PreviewProvider {
     static var previews: some View {
-        let api = OnboardingAPI.Instance
+        let api = ClippyAPI.Instance
         OnboardingAllergies().environmentObject(api)
     }
 }

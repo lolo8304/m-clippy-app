@@ -7,20 +7,19 @@
 
 import SwiftUI
 
-struct OnboardingSetup: View {
+struct Reporting: View {
     @EnvironmentObject var api:ClippyAPI
     
     var body: some View {
         ScrollView {
-            ClippyImageHeader()
+            ReportingHeader()
             VStack {
-                OnboardingHabits().environmentObject(api)
-                OnboardingLocations().environmentObject(api)
-                OnboardingAllergies().environmentObject(api)
+                ReportingSummary().environmentObject(api)
+                ReportingLocations().environmentObject(api)
                 Spacer()
             }
             .padding(.all, 0)
-            .navigationBarTitle(Text("Clippy: \(self.api.user.Name())"))
+            .navigationBarTitle(Text("Clippy Tips \(self.api.user.firstName ?? "-")"))
             .navigationViewStyle(StackNavigationViewStyle())
             /*.navigationBarItems(
                 trailing: HStack {
@@ -36,9 +35,9 @@ struct OnboardingSetup: View {
     }
 }
 
-struct OnboardingSetup_Previews: PreviewProvider {
+struct Reporting_Previews: PreviewProvider {
     static var previews: some View {
         let api = ClippyAPI.Instance
-        OnboardingSetup().environmentObject(api)
+        Reporting().environmentObject(api)
     }
 }

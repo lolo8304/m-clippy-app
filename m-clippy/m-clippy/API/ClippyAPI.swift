@@ -66,12 +66,12 @@ public class User: Decodable, Encodable, ObservableObject, Identifiable, Hashabl
     
     public func Name() -> String {
         let firstChar = (self.firstName ?? "M").substring(to: String.Index(encodedOffset: 1))
-        return "\(firstChar). \(self.lastName ?? "Tester")";
+        return "\(firstChar). \(self.lastName ?? "Tester")"
     }
 }
 
-public class OnboardingAPI: ObservableObject {
-    static var Instance:OnboardingAPI = OnboardingAPI()
+public class ClippyAPI: ObservableObject {
+    static var Instance:ClippyAPI = ClippyAPI()
 
     static var staticExcludedCountries:[String] = [
         "China",
@@ -83,6 +83,7 @@ public class OnboardingAPI: ObservableObject {
     public var objectWillChange = PassthroughSubject<Void, Never>()
     @ObservedObject var user:User = DemoUser() { didSet { objectWillChange.send() }}
     @ObservedObject var staticAllergenes:Allergens = Allergens() { didSet { objectWillChange.send() }}
+    @ObservedObject var reportings:Reportings = Reportings() { didSet { objectWillChange.send() }}
 
     public init() {
         GetUser(completion: { (newUser) in
@@ -90,6 +91,9 @@ public class OnboardingAPI: ObservableObject {
         })
         GetMetaDataAllergens(completion: { (allergens) in
             self.staticAllergenes = allergens
+        })
+        GetReportings(completion: { (reportings) in
+            self.reportings = reportings
         })
     }
     
@@ -104,12 +108,23 @@ public class OnboardingAPI: ObservableObject {
         }.resume()
     }
     
+    func GetReportings(completion: @escaping (Reportings) ->()) {
+        guard let url = URL(string: "https://m-clippy.azurewebsites.net/api/reporting/purchases/\(User.UserId)") else { return }
+        URLSession.shared.dataTask(with: url) { (data, _, _) in
+            let reporting = try! JSONDecoder().decode(Reportings.self, from: data!)
+            DispatchQueue.main.async {
+                completion(reporting)
+            }
+            
+        }.resume()
+    }
+    
     func GetMetaDataAllergens(completion: @escaping (Allergens) ->()) {
         guard let url = URL(string: "https://m-clippy.azurewebsites.net/api/metadata/allergens") else { return }
         URLSession.shared.dataTask(with: url) { (data, _, _) in
             let allergens = try! JSONDecoder().decode(Allergens.self, from: data!)
             allergens.list = allergens.list.sorted {
-                $0.Code > $1.Code
+                $0.Code < $1.Code
             }
             DispatchQueue.main.async {
                 completion(allergens)
@@ -164,8 +179,37 @@ public class OnboardingAPI: ObservableObject {
 
 
 
+
+
+public class Reportings : Codable, ObservableObject {
+    var list:[Violation] = []
+    var Score:Int = 91
+    var HabitsCounter: Int = 0
+    var LocationCounter: Int = 0
+    var AllergyCounter: Int = 0
+    var CountriesCounter: Int = 0
+    var NationalSum:Double = 5.0
+    var RegionalSum:Double = 78.0
+    var OutsideSum: Double = 14.0
+    var allergens = Dictionary<String, Int>()
+    
+}
+
+public class Violation : Codable, ObservableObject {
+    var Thumbnail:String = ""
+    var Image:String = ""
+    var Price:Double = 0.0
+    var Quantity:String = "100g"
+    var ArticleID:String = "104223700000"
+    var LocationAlert:Bool = false
+    var HabitsAlert:Bool = true
+    var AllergyAlert:Bool = false
+}
+
+
+
 struct OnboardingAPI_Previews: PreviewProvider {
     static var previews: some View {
-        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+        Text("Hello, World!")
     }
 }

@@ -11,7 +11,7 @@ import SwiftUI
 struct m_clippyApp: App {
     var body: some Scene {
         WindowGroup {
-            SettingsView(showingAlert: false).environmentObject(OnboardingAPI.Instance)
+            SettingsView(showingAlert: false).environmentObject(ClippyAPI.Instance)
         }
     }
 }

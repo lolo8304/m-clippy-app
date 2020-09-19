@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftUICharts
 
 struct SettingsView: View {
     static let MigrosColor:Color = Color(red: 255 / 255, green: 102 / 255, blue: 3   / 255)
@@ -13,7 +14,17 @@ struct SettingsView: View {
     static let MigrosColorWhite:Color = Color(red: 255 / 255, green: 255 / 255, blue: 255 / 255)
     static let MigrosColorGray:Color = Color(red: 236 / 255, green: 236 / 255, blue: 236 / 255)
 
-    @EnvironmentObject var api:OnboardingAPI
+    static let MigrosMultiStyle = ChartStyle(backgroundColor: Color.green.opacity(0.2),
+                                    foregroundColor:
+                                        [ColorGradient(.green, .blue),
+                                         ColorGradient(.orange, .red),
+                                         ColorGradient(.green, .yellow),
+                                         ColorGradient(.red, .purple),
+                                         ColorGradient(.yellow, .orange),
+                                        ])
+    
+    
+    @EnvironmentObject var api:ClippyAPI
     //@EnvironmentObject var user:User
     @State var showingAlert:Bool
         
@@ -58,9 +69,11 @@ struct SettingsView: View {
                         Text("m-Clippy Onboarding")
                     }
                     NavigationLink(destination:
-                                    OnboardingSetup().environmentObject(api)) {
+                                    Reporting()
+                                        .environmentObject(api)
+                            ) {
                         Text("m-Clippy Tips!")
-                    }.disabled(!(self.api.user.configured ?? true))
+                    }
                 }
                 Spacer()
             }
@@ -86,7 +99,7 @@ struct SettingsView: View {
         }
     }
     func reset() {
-        OnboardingAPI.Instance.GetUser { (user) in
+        ClippyAPI.Instance.GetUser { (user) in
             //self.user = user
         }
     }
@@ -95,7 +108,7 @@ struct SettingsView: View {
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            SettingsView(showingAlert: false).environmentObject(OnboardingAPI.Instance);
+            SettingsView(showingAlert: false).environmentObject(ClippyAPI.Instance)
         }
     }
 }

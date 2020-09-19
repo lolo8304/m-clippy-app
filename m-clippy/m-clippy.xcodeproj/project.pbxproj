@@ -3,22 +3,28 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		E14F9AE22515A53E00D110CE /* m_clippyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14F9AE12515A53E00D110CE /* m_clippyApp.swift */; };
 		E14F9AE62515A54000D110CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E14F9AE52515A54000D110CE /* Assets.xcassets */; };
 		E14F9AE92515A54000D110CE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E14F9AE82515A54000D110CE /* Preview Assets.xcassets */; };
-		E16C1B3D2515EFC9005A9FDF /* OnboardingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16C1B3C2515EFC9005A9FDF /* OnboardingAPI.swift */; };
+		E16C1B3D2515EFC9005A9FDF /* ClippyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16C1B3C2515EFC9005A9FDF /* ClippyAPI.swift */; };
 		E16C1B4325160466005A9FDF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16C1B4225160466005A9FDF /* SettingsView.swift */; };
 		E16C1B4925161A03005A9FDF /* OnboardingSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16C1B4825161A03005A9FDF /* OnboardingSetup.swift */; };
 		E16C1B4D25162C5D005A9FDF /* ClippyImageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16C1B4C25162C5D005A9FDF /* ClippyImageHeader.swift */; };
 		E16C1B5025162C9A005A9FDF /* OnboardingHabits.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16C1B4F25162C9A005A9FDF /* OnboardingHabits.swift */; };
 		E16C1B542516439E005A9FDF /* ClippyBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16C1B532516439E005A9FDF /* ClippyBox.swift */; };
+		E17A3D10251698B200C1E1BF /* ReportingHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17A3D0F251698B200C1E1BF /* ReportingHeader.swift */; };
+		E17A3D1325169F0400C1E1BF /* ReportingSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17A3D1225169F0400C1E1BF /* ReportingSummary.swift */; };
+		E17A3D172516A50600C1E1BF /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = E17A3D162516A50600C1E1BF /* SwiftUICharts */; };
+		E17A3D1A2516A88C00C1E1BF /* ReportingLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17A3D192516A88C00C1E1BF /* ReportingLocations.swift */; };
+		E17A3D1E2516BACF00C1E1BF /* ReportingAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17A3D1D2516BACF00C1E1BF /* ReportingAlerts.swift */; };
 		E1F5C556251677E200EE284F /* OnboardingLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5C555251677E200EE284F /* OnboardingLocations.swift */; };
 		E1F5C5592516805500EE284F /* OnboardingAllergies.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5C5582516805500EE284F /* OnboardingAllergies.swift */; };
 		E1F5C55D2516900F00EE284F /* ForEachWithIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5C55C2516900F00EE284F /* ForEachWithIndex.swift */; };
+		E1F5C5642516965900EE284F /* Reporting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5C5632516965900EE284F /* Reporting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,15 +33,20 @@
 		E14F9AE52515A54000D110CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E14F9AE82515A54000D110CE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E14F9AEA2515A54000D110CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E16C1B3C2515EFC9005A9FDF /* OnboardingAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingAPI.swift; sourceTree = "<group>"; };
+		E16C1B3C2515EFC9005A9FDF /* ClippyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClippyAPI.swift; sourceTree = "<group>"; };
 		E16C1B4225160466005A9FDF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		E16C1B4825161A03005A9FDF /* OnboardingSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSetup.swift; sourceTree = "<group>"; };
 		E16C1B4C25162C5D005A9FDF /* ClippyImageHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClippyImageHeader.swift; sourceTree = "<group>"; };
 		E16C1B4F25162C9A005A9FDF /* OnboardingHabits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingHabits.swift; sourceTree = "<group>"; };
 		E16C1B532516439E005A9FDF /* ClippyBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClippyBox.swift; sourceTree = "<group>"; };
+		E17A3D0F251698B200C1E1BF /* ReportingHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportingHeader.swift; sourceTree = "<group>"; };
+		E17A3D1225169F0400C1E1BF /* ReportingSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportingSummary.swift; sourceTree = "<group>"; };
+		E17A3D192516A88C00C1E1BF /* ReportingLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportingLocations.swift; sourceTree = "<group>"; };
+		E17A3D1D2516BACF00C1E1BF /* ReportingAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportingAlerts.swift; sourceTree = "<group>"; };
 		E1F5C555251677E200EE284F /* OnboardingLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLocations.swift; sourceTree = "<group>"; };
 		E1F5C5582516805500EE284F /* OnboardingAllergies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingAllergies.swift; sourceTree = "<group>"; };
 		E1F5C55C2516900F00EE284F /* ForEachWithIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForEachWithIndex.swift; sourceTree = "<group>"; };
+		E1F5C5632516965900EE284F /* Reporting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reporting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E17A3D172516A50600C1E1BF /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +80,7 @@
 		E14F9AE02515A53E00D110CE /* m-clippy */ = {
 			isa = PBXGroup;
 			children = (
+				E1F5C5602516947900EE284F /* Reporting */,
 				E16C1B47251619C6005A9FDF /* Onboarding */,
 				E16C1B4125160450005A9FDF /* Main */,
 				E16C1B3B2515EF8E005A9FDF /* API */,
@@ -90,7 +103,7 @@
 		E16C1B3B2515EF8E005A9FDF /* API */ = {
 			isa = PBXGroup;
 			children = (
-				E16C1B3C2515EFC9005A9FDF /* OnboardingAPI.swift */,
+				E16C1B3C2515EFC9005A9FDF /* ClippyAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -108,13 +121,25 @@
 		E16C1B47251619C6005A9FDF /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				E16C1B4C25162C5D005A9FDF /* ClippyImageHeader.swift */,
 				E16C1B4825161A03005A9FDF /* OnboardingSetup.swift */,
+				E16C1B4C25162C5D005A9FDF /* ClippyImageHeader.swift */,
 				E16C1B4F25162C9A005A9FDF /* OnboardingHabits.swift */,
 				E1F5C555251677E200EE284F /* OnboardingLocations.swift */,
 				E1F5C5582516805500EE284F /* OnboardingAllergies.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		E1F5C5602516947900EE284F /* Reporting */ = {
+			isa = PBXGroup;
+			children = (
+				E1F5C5632516965900EE284F /* Reporting.swift */,
+				E17A3D0F251698B200C1E1BF /* ReportingHeader.swift */,
+				E17A3D1225169F0400C1E1BF /* ReportingSummary.swift */,
+				E17A3D192516A88C00C1E1BF /* ReportingLocations.swift */,
+				E17A3D1D2516BACF00C1E1BF /* ReportingAlerts.swift */,
+			);
+			path = Reporting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,6 +158,9 @@
 			dependencies = (
 			);
 			name = "m-clippy";
+			packageProductDependencies = (
+				E17A3D162516A50600C1E1BF /* SwiftUICharts */,
+			);
 			productName = "m-clippy";
 			productReference = E14F9ADE2515A53E00D110CE /* m-clippy.app */;
 			productType = "com.apple.product-type.application";
@@ -160,6 +188,9 @@
 				Base,
 			);
 			mainGroup = E14F9AD52515A53E00D110CE;
+			packageReferences = (
+				E17A3D152516A50600C1E1BF /* XCRemoteSwiftPackageReference "ChartView" */,
+			);
 			productRefGroup = E14F9ADF2515A53E00D110CE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -188,12 +219,17 @@
 			files = (
 				E16C1B4925161A03005A9FDF /* OnboardingSetup.swift in Sources */,
 				E16C1B4325160466005A9FDF /* SettingsView.swift in Sources */,
+				E17A3D1325169F0400C1E1BF /* ReportingSummary.swift in Sources */,
+				E1F5C5642516965900EE284F /* Reporting.swift in Sources */,
+				E17A3D1E2516BACF00C1E1BF /* ReportingAlerts.swift in Sources */,
 				E16C1B4D25162C5D005A9FDF /* ClippyImageHeader.swift in Sources */,
+				E17A3D1A2516A88C00C1E1BF /* ReportingLocations.swift in Sources */,
 				E1F5C55D2516900F00EE284F /* ForEachWithIndex.swift in Sources */,
 				E1F5C556251677E200EE284F /* OnboardingLocations.swift in Sources */,
 				E16C1B542516439E005A9FDF /* ClippyBox.swift in Sources */,
+				E17A3D10251698B200C1E1BF /* ReportingHeader.swift in Sources */,
 				E16C1B5025162C9A005A9FDF /* OnboardingHabits.swift in Sources */,
-				E16C1B3D2515EFC9005A9FDF /* OnboardingAPI.swift in Sources */,
+				E16C1B3D2515EFC9005A9FDF /* ClippyAPI.swift in Sources */,
 				E14F9AE22515A53E00D110CE /* m_clippyApp.swift in Sources */,
 				E1F5C5592516805500EE284F /* OnboardingAllergies.swift in Sources */,
 			);
@@ -384,6 +420,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E17A3D152516A50600C1E1BF /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = exactVersion;
+				version = "2.0.0-beta.1";
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E17A3D162516A50600C1E1BF /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E17A3D152516A50600C1E1BF /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E14F9AD62515A53E00D110CE /* Project object */;
 }
