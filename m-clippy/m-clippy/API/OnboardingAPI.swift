@@ -38,7 +38,6 @@ public class Locations: Codable, ObservableObject {
     var exclusion2:String?
 }
 
-
 public class Allergies:Codable, ObservableObject {
     var matching:[String] = []
 }

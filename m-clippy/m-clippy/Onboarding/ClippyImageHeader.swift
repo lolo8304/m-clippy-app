@@ -14,7 +14,7 @@ struct ClippyImageHeader: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .padding(0)
-            Image("location")
+            Image("location-OK")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .padding(0)

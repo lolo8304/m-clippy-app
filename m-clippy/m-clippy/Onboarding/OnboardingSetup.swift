@@ -16,6 +16,7 @@ struct OnboardingSetup: View {
             VStack {
                 OnboardingHabits().environmentObject(api)
                 OnboardingLocations().environmentObject(api)
+                OnboardingAllergies().environmentObject(api)
                 Spacer()
             }
             .padding(.all, 0)
