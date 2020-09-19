@@ -31,7 +31,7 @@ struct OnboardingAllergies: View {
     @State var allergens: AllergensBool = AllergensBool(allergens: ClippyAPI.Instance.staticAllergenes)
 
     var body: some View {
-        ClippyBox(title: "I have food allergies or intolerances", subTitle:"(select and we will alert you while buying)", backColor: SettingsView.MigrosColor, foreColor: Color.white, image: Image("allergy-OK") ) {
+        ClippyBox(title: "My allergies", subTitle:"You select and Clippy will alert you while buying", backColor: SettingsView.MigrosColor, foreColor: Color.white, image: Image("allergy-OK") ) {
             
             ForEach(allergens.allergens.indices) { i in
 

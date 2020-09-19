@@ -31,11 +31,11 @@ struct ClippyBox<Content: View>: View {
                     VStack {
                         Text(title)
                             .font(.title).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                            .frame(width: UIScreen.screenWidth-4*18-32, alignment: .leading)
+                            .frame(width: UIScreen.screenWidth-4*18-50, alignment: .leading)
                         if (self.subTitle != nil) {
                             Text(subTitle!)
                                 .font(.subheadline).fontWeight(.thin)
-                                .frame(width: UIScreen.screenWidth-4*18-32, alignment: .leading)
+                                .frame(width: UIScreen.screenWidth-4*18-50, alignment: .leading)
                         }
                     }.padding(0)
                     .frame(width: UIScreen.screenWidth-4*18-50, alignment: .leading)

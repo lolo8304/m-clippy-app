@@ -11,7 +11,7 @@ struct OnboardingHabits: View {
     @EnvironmentObject var api: ClippyAPI
     
     var body: some View {
-        ClippyBox(title: "I prefer the following food", subTitle:"(we will help you choosing the right products)", backColor: SettingsView.MigrosColorCumulus, foreColor: Color.white, image: Image("habits-OK") ) {
+        ClippyBox(title: "I prefer food habits", subTitle:"Clippy will assist you choosing the right products", backColor: SettingsView.MigrosColorCumulus, foreColor: Color.white, image: Image("habits-OK") ) {
             Toggle(isOn: $api.user.habits.bio) {
                 Text("Bio")
             }
@@ -20,12 +20,6 @@ struct OnboardingHabits: View {
             }
             Toggle(isOn: $api.user.habits.vegan) {
                 Text("Vegan")
-            }
-            Toggle(isOn: $api.user.habits.casher) {
-                Text("Casher")
-            }
-            Toggle(isOn: $api.user.habits.halal) {
-                Text("Halal")
             }
         }
 

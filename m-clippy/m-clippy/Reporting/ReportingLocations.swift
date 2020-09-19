@@ -13,7 +13,7 @@ struct ReportingLocations: View {
     
     
     var body: some View {
-        ClippyBox(title: "Origin", subTitle:"(we tell you from where your products are orginated)", backColor: SettingsView.MigrosColorWhite, foreColor: Color.black, image: Image("location-OK") ) {
+        ClippyBox(title: "Origin of products", subTitle:"Clippy tells you from where your products are orginated", backColor: SettingsView.MigrosColorWhite, foreColor: Color.black, image: Image("location-OK") ) {
             HStack {
                 VStack {
                     CardView {

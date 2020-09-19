@@ -21,6 +21,10 @@
 		E17A3D172516A50600C1E1BF /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = E17A3D162516A50600C1E1BF /* SwiftUICharts */; };
 		E17A3D1A2516A88C00C1E1BF /* ReportingLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17A3D192516A88C00C1E1BF /* ReportingLocations.swift */; };
 		E17A3D1E2516BACF00C1E1BF /* ReportingAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17A3D1D2516BACF00C1E1BF /* ReportingAlerts.swift */; };
+		E17A3D232516BCE000C1E1BF /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17A3D212516BCDF00C1E1BF /* ImageView.swift */; };
+		E17A3D242516BCE000C1E1BF /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17A3D222516BCDF00C1E1BF /* ImageLoader.swift */; };
+		E17A3D272516C28700C1E1BF /* ReportingSustainability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17A3D262516C28700C1E1BF /* ReportingSustainability.swift */; };
+		E17A3D2A2516C68C00C1E1BF /* ReportingLifestyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17A3D292516C68C00C1E1BF /* ReportingLifestyle.swift */; };
 		E1F5C556251677E200EE284F /* OnboardingLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5C555251677E200EE284F /* OnboardingLocations.swift */; };
 		E1F5C5592516805500EE284F /* OnboardingAllergies.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5C5582516805500EE284F /* OnboardingAllergies.swift */; };
 		E1F5C55D2516900F00EE284F /* ForEachWithIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5C55C2516900F00EE284F /* ForEachWithIndex.swift */; };
@@ -43,6 +47,10 @@
 		E17A3D1225169F0400C1E1BF /* ReportingSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportingSummary.swift; sourceTree = "<group>"; };
 		E17A3D192516A88C00C1E1BF /* ReportingLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportingLocations.swift; sourceTree = "<group>"; };
 		E17A3D1D2516BACF00C1E1BF /* ReportingAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportingAlerts.swift; sourceTree = "<group>"; };
+		E17A3D212516BCDF00C1E1BF /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		E17A3D222516BCDF00C1E1BF /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		E17A3D262516C28700C1E1BF /* ReportingSustainability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportingSustainability.swift; sourceTree = "<group>"; };
+		E17A3D292516C68C00C1E1BF /* ReportingLifestyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportingLifestyle.swift; sourceTree = "<group>"; };
 		E1F5C555251677E200EE284F /* OnboardingLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLocations.swift; sourceTree = "<group>"; };
 		E1F5C5582516805500EE284F /* OnboardingAllergies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingAllergies.swift; sourceTree = "<group>"; };
 		E1F5C55C2516900F00EE284F /* ForEachWithIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForEachWithIndex.swift; sourceTree = "<group>"; };
@@ -80,6 +88,7 @@
 		E14F9AE02515A53E00D110CE /* m-clippy */ = {
 			isa = PBXGroup;
 			children = (
+				E17A3D202516BCC500C1E1BF /* ImageView */,
 				E1F5C5602516947900EE284F /* Reporting */,
 				E16C1B47251619C6005A9FDF /* Onboarding */,
 				E16C1B4125160450005A9FDF /* Main */,
@@ -130,6 +139,15 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		E17A3D202516BCC500C1E1BF /* ImageView */ = {
+			isa = PBXGroup;
+			children = (
+				E17A3D222516BCDF00C1E1BF /* ImageLoader.swift */,
+				E17A3D212516BCDF00C1E1BF /* ImageView.swift */,
+			);
+			path = ImageView;
+			sourceTree = "<group>";
+		};
 		E1F5C5602516947900EE284F /* Reporting */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +156,8 @@
 				E17A3D1225169F0400C1E1BF /* ReportingSummary.swift */,
 				E17A3D192516A88C00C1E1BF /* ReportingLocations.swift */,
 				E17A3D1D2516BACF00C1E1BF /* ReportingAlerts.swift */,
+				E17A3D262516C28700C1E1BF /* ReportingSustainability.swift */,
+				E17A3D292516C68C00C1E1BF /* ReportingLifestyle.swift */,
 			);
 			path = Reporting;
 			sourceTree = "<group>";
@@ -224,9 +244,13 @@
 				E17A3D1E2516BACF00C1E1BF /* ReportingAlerts.swift in Sources */,
 				E16C1B4D25162C5D005A9FDF /* ClippyImageHeader.swift in Sources */,
 				E17A3D1A2516A88C00C1E1BF /* ReportingLocations.swift in Sources */,
+				E17A3D2A2516C68C00C1E1BF /* ReportingLifestyle.swift in Sources */,
+				E17A3D272516C28700C1E1BF /* ReportingSustainability.swift in Sources */,
 				E1F5C55D2516900F00EE284F /* ForEachWithIndex.swift in Sources */,
+				E17A3D232516BCE000C1E1BF /* ImageView.swift in Sources */,
 				E1F5C556251677E200EE284F /* OnboardingLocations.swift in Sources */,
 				E16C1B542516439E005A9FDF /* ClippyBox.swift in Sources */,
+				E17A3D242516BCE000C1E1BF /* ImageLoader.swift in Sources */,
 				E17A3D10251698B200C1E1BF /* ReportingHeader.swift in Sources */,
 				E16C1B5025162C9A005A9FDF /* OnboardingHabits.swift in Sources */,
 				E16C1B3D2515EFC9005A9FDF /* ClippyAPI.swift in Sources */,

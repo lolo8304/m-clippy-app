@@ -20,7 +20,7 @@ struct OnboardingSetup: View {
                 Spacer()
             }
             .padding(.all, 0)
-            .navigationBarTitle(Text("Clippy: \(self.api.user.Name())"))
+            .navigationBarTitle(Text("Objectives \(self.api.user.Name())"))
             .navigationViewStyle(StackNavigationViewStyle())
             /*.navigationBarItems(
                 trailing: HStack {

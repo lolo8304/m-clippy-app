@@ -8,42 +8,42 @@
 import SwiftUI
 import SwiftUICharts
 
-struct ReportingAlerts: View {
+struct ReportingSustainability: View {
     @EnvironmentObject var api: ClippyAPI
     
     
     var body: some View {
-        ClippyBox(title: "Alerts", subTitle:"Clippy has alerted you so many times", backColor: SettingsView.MigrosColorCumulus, foreColor: Color.white, image: Image("alerts") ) {
+        ClippyBox(title: "Sustainability", subTitle:"Clippy tells CO2 equivalent to", backColor: SettingsView.MigrosColor, foreColor: Color.white, image: Image("alerts") ) {
             VStack {
                 HStack {
-                    Image("habits-NOK")
+                    Image("cars")
                         .resizable()
                         .frame(width: 50, height: 50)
                     VStack(alignment: .leading) {
-                        Text("Eating habits and behaviors").font(.headline)
+                        Text("km you could drive").font(.headline)
                     }.padding(.leading, 1)
                     Spacer()
-                    Text("\(self.api.reportings.HabitsCounter)").font(.largeTitle)
+                    Text("\(self.api.reportings.PlanesKm)").font(.largeTitle)
                 }.padding(.init(top:4, leading: 0, bottom: 4, trailing: 8))
                 HStack {
-                    Image("location-NOK")
+                    Image("planes")
                         .resizable()
                         .frame(width: 50, height: 50)
                     VStack(alignment: .leading) {
-                        Text("Origin of products").font(.headline)
+                        Text("Miles you could fly").font(.headline)
                     }.padding(.leading, 1)
                     Spacer()
-                    Text("\(self.api.reportings.LocationCounter)").font(.largeTitle)
+                    Text("\(self.api.reportings.CarKm)").font(.largeTitle)
                 }.padding(.init(top:4, leading: 0, bottom: 4, trailing: 8))
                 HStack {
-                    Image("allergy-NOK")
+                    Image("countries")
                         .resizable()
                         .frame(width: 50, height: 50)
                     VStack(alignment: .leading) {
-                        Text("Allergenes in products").font(.headline)
+                        Text("No of countries from your products").font(.headline)
                     }.padding(.leading, 1)
                     Spacer()
-                    Text("\(self.api.reportings.AllergyCounter)").font(.largeTitle)
+                    Text("\(self.api.reportings.CountriesCounter)").font(.largeTitle)
                 }.padding(.init(top:4, leading: 0, bottom: 4, trailing: 8))
             }
         }
@@ -51,9 +51,9 @@ struct ReportingAlerts: View {
     }
 }
 
-struct ReportingAlerts_Previews: PreviewProvider {
+struct ReportingSustainability_Previews: PreviewProvider {
     static var previews: some View {
         let api = ClippyAPI.Instance
-        ReportingAlerts().environmentObject(api)
+        ReportingSustainability().environmentObject(api)
     }
 }

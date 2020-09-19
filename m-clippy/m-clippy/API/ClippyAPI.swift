@@ -184,13 +184,18 @@ public class ClippyAPI: ObservableObject {
 public class Reportings : Codable, ObservableObject {
     var list:[Violation] = []
     var Score:Int = 91
+    
     var HabitsCounter: Int = 0
     var LocationCounter: Int = 0
     var AllergyCounter: Int = 0
+    
     var CountriesCounter: Int = 0
+    var PlanesKm:String = "100km"
+    var CarKm:String = "71km"
     var NationalSum:Double = 5.0
     var RegionalSum:Double = 78.0
     var OutsideSum: Double = 14.0
+    
     var allergens = Dictionary<String, Int>()
     
 }

@@ -21,7 +21,7 @@ struct ReportingSummary: View {
 
 
     var body: some View {
-        ClippyBox(title: "Summary", subTitle:"(here you can see how good your are to your objectives)", backColor: SettingsView.MigrosColorCumulus, foreColor: Color.white, image: Image("flag") ) {
+        ClippyBox(title: "Summary", subTitle:"Clippy tells if you have reached your objectives", backColor: SettingsView.MigrosColorCumulus, foreColor: Color.white, image: Image("flag") ) {
             HStack {
                 VStack {
                     CardView {

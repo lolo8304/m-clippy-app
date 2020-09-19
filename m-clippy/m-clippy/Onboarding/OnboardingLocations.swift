@@ -14,7 +14,7 @@ struct OnboardingLocations: View {
     @State var isOutside:Bool = false
     
     var body: some View {
-        ClippyBox(title: "Local or remote economy?", subTitle:"(we will show you from where your product orginate)", backColor: SettingsView.MigrosColorWhite, foreColor: Color.black, image: Image("location-OK") ) {
+        ClippyBox(title: "I support local", subTitle:"Clippy will show you from where your product orginate", backColor: SettingsView.MigrosColorWhite, foreColor: Color.black, image: Image("location-OK") ) {
             Toggle(isOn: $isRegional) {
                 Text("Regional")
             }.onChange(of: true, perform: { value in

@@ -16,6 +16,9 @@ struct Reporting: View {
             VStack {
                 ReportingSummary().environmentObject(api)
                 ReportingLocations().environmentObject(api)
+                ReportingSustainability().environmentObject(api)
+                ReportingAlerts().environmentObject(api)
+                ReportingLifestyle().environmentObject(api)
                 Spacer()
             }
             .padding(.all, 0)
