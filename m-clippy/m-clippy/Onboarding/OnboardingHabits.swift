@@ -16,30 +16,23 @@ struct OnboardingHabits<Content: View>: View {
     }
 
     var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
-                Text("I prefer the following food")
-                    .font(.title).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                Toggle(isOn: $api.user.habits.bio) {
-                    Text("Bio")
-                }
-                Toggle(isOn: $api.user.habits.vegetarian) {
-                    Text("Vegetarian")
-                }
-                Toggle(isOn: $api.user.habits.vegan) {
-                    Text("Vegan")
-                }
-                Toggle(isOn: $api.user.habits.casher) {
-                    Text("Casher")
-                }
-                Toggle(isOn: $api.user.habits.halal) {
-                    Text("Halal")
-                }
-                content
-            }.padding()
-            .foregroundColor(.white)
-            .background(SettingsView.MigrosColorCumulus)
-        }.padding(18)
+        ClippyBox(title: "I prefer the following food", subTitle:"(we will help you choosing the right products)", backColor: SettingsView.MigrosColorCumulus, foreColor: Color.white) {
+            Toggle(isOn: $api.user.habits.bio) {
+                Text("Bio")
+            }
+            Toggle(isOn: $api.user.habits.vegetarian) {
+                Text("Vegetarian")
+            }
+            Toggle(isOn: $api.user.habits.vegan) {
+                Text("Vegan")
+            }
+            Toggle(isOn: $api.user.habits.casher) {
+                Text("Casher")
+            }
+            Toggle(isOn: $api.user.habits.halal) {
+                Text("Halal")
+            }        }
+
     }
 }
 

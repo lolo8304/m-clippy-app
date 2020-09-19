@@ -27,7 +27,7 @@ struct OnboardingSetup: View {
                     Button(action:done, label: { Text("Done") })
                 }
             )
-        }
+        }.background(Color.green)
     }
     
     func done() {
