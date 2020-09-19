@@ -16,6 +16,7 @@
 		E16C1B4D25162C5D005A9FDF /* ClippyImageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16C1B4C25162C5D005A9FDF /* ClippyImageHeader.swift */; };
 		E16C1B5025162C9A005A9FDF /* OnboardingHabits.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16C1B4F25162C9A005A9FDF /* OnboardingHabits.swift */; };
 		E16C1B542516439E005A9FDF /* ClippyBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16C1B532516439E005A9FDF /* ClippyBox.swift */; };
+		E1F5C556251677E200EE284F /* OnboardingLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5C555251677E200EE284F /* OnboardingLocations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		E16C1B4C25162C5D005A9FDF /* ClippyImageHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClippyImageHeader.swift; sourceTree = "<group>"; };
 		E16C1B4F25162C9A005A9FDF /* OnboardingHabits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingHabits.swift; sourceTree = "<group>"; };
 		E16C1B532516439E005A9FDF /* ClippyBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClippyBox.swift; sourceTree = "<group>"; };
+		E1F5C555251677E200EE284F /* OnboardingLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLocations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				E16C1B4C25162C5D005A9FDF /* ClippyImageHeader.swift */,
 				E16C1B4825161A03005A9FDF /* OnboardingSetup.swift */,
 				E16C1B4F25162C9A005A9FDF /* OnboardingHabits.swift */,
+				E1F5C555251677E200EE284F /* OnboardingLocations.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 				E16C1B4925161A03005A9FDF /* OnboardingSetup.swift in Sources */,
 				E16C1B4325160466005A9FDF /* SettingsView.swift in Sources */,
 				E16C1B4D25162C5D005A9FDF /* ClippyImageHeader.swift in Sources */,
+				E1F5C556251677E200EE284F /* OnboardingLocations.swift in Sources */,
 				E16C1B542516439E005A9FDF /* ClippyBox.swift in Sources */,
 				E16C1B5025162C9A005A9FDF /* OnboardingHabits.swift in Sources */,
 				E16C1B3D2515EFC9005A9FDF /* OnboardingAPI.swift in Sources */,

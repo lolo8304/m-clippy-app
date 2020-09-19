@@ -7,14 +7,9 @@
 
 import SwiftUI
 
-struct OnboardingHabits<Content: View>: View {
+struct OnboardingHabits: View {
     @EnvironmentObject var api: OnboardingAPI
-    let content: Content
     
-    init(@ViewBuilder content: () -> Content) {
-        self.content = content()
-    }
-
     var body: some View {
         ClippyBox(title: "I prefer the following food", subTitle:"(we will help you choosing the right products)", backColor: SettingsView.MigrosColorCumulus, foreColor: Color.white, image: Image("habits-OK") ) {
             Toggle(isOn: $api.user.habits.bio) {
@@ -31,7 +26,8 @@ struct OnboardingHabits<Content: View>: View {
             }
             Toggle(isOn: $api.user.habits.halal) {
                 Text("Halal")
-            }        }
+            }
+        }
 
     }
 }
@@ -39,8 +35,6 @@ struct OnboardingHabits<Content: View>: View {
 struct OnboardingHabits_Previews: PreviewProvider {
     static var previews: some View {
         let api = OnboardingAPI.Instance
-        OnboardingHabits(content: {
-            Text("hello")
-        }).environmentObject(api)
+        OnboardingHabits().environmentObject(api)
     }
 }

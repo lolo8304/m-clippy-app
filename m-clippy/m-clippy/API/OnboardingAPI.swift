@@ -14,6 +14,14 @@ import Combine
 // post message: https://www.youtube.com/watch?v=EuNThe245nk
 
 
+public class Allergen : Codable, ObservableObject {
+    var Code: String
+    var Text: String
+}
+public class Allergens : Codable, ObservableObject {
+    var list: [Allergen] = []
+}
+
 public class Habits : Codable, ObservableObject {
     var bio:Bool = true
     var vegetarian:Bool = false
@@ -64,20 +72,25 @@ public class User: Decodable, Encodable, ObservableObject, Identifiable, Hashabl
 }
 
 public class OnboardingAPI: ObservableObject {
-    static var titles:[String] = [
-        "Verkehrsunfall / Kollision",
-        "Marderschaden",
-        "Glassschaden",
-        "Assistance"
-    ]
     static var Instance:OnboardingAPI = OnboardingAPI()
+
+    static var staticExcludedCountries:[String] = [
+        "China",
+        "USA",
+        "Belarus",
+        "Frankreich"
+    ]
 
     public var objectWillChange = PassthroughSubject<Void, Never>()
     @ObservedObject var user:User = DemoUser() { didSet { objectWillChange.send() }}
-    
+    @ObservedObject var staticAllergenes:Allergens = Allergens() { didSet { objectWillChange.send() }}
+
     public init() {
         GetUser(completion: { (newUser) in
             self.user = newUser
+        })
+        GetMetaDataAllergens(completion: { (allergens) in
+            self.staticAllergenes = allergens
         })
     }
     
@@ -89,6 +102,19 @@ public class OnboardingAPI: ObservableObject {
                 completion(user)
             }
             
+        }.resume()
+    }
+    
+    func GetMetaDataAllergens(completion: @escaping (Allergens) ->()) {
+        guard let url = URL(string: "https://m-clippy.azurewebsites.net/api/metadata/allergens") else { return }
+        URLSession.shared.dataTask(with: url) { (data, _, _) in
+            let allergens = try! JSONDecoder().decode(Allergens.self, from: data!)
+            allergens.list = allergens.list.sorted {
+                $0.Code > $1.Code
+            }
+            DispatchQueue.main.async {
+                completion(allergens)
+            }
         }.resume()
     }
     

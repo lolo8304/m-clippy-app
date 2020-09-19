@@ -14,9 +14,8 @@ struct OnboardingSetup: View {
         ScrollView {
             ClippyImageHeader()
             VStack {
-                OnboardingHabits(content: {
-                        Text("ddd")
-                }).environmentObject(api)
+                OnboardingHabits().environmentObject(api)
+                OnboardingLocations().environmentObject(api)
                 Spacer()
             }
             .padding(.all, 0)
