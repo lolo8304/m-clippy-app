@@ -14,7 +14,7 @@ import Combine
 // post message: https://www.youtube.com/watch?v=EuNThe245nk
 
 
-struct Habits:Codable {
+public class Habits : Codable, ObservableObject {
     var bio:Bool = true
     var vegetarian:Bool = false
     var vegan:Bool = false
@@ -22,7 +22,7 @@ struct Habits:Codable {
     var halal:Bool = false
 }
 
-struct Location:Codable {
+public class Locations: Codable, ObservableObject {
     var regional:Int = 1
     var national:Int = 2
     var outside:Int = 3
@@ -31,35 +31,31 @@ struct Location:Codable {
 }
 
 
-struct Location:Codable {
-    var regional:Int = 1
-    var national:Int = 2
-    var outside:Int = 3
-    var exclusion1:String?
-    var exclusion2:String?
+public class Allergies:Codable, ObservableObject {
+    var matching:[String] = []
 }
 
-class User: Decodable, Encodable, ObservableObject, Identifiable, Hashable, Equatable {
+public class User: Decodable, Encodable, ObservableObject, Identifiable, Hashable, Equatable {
     static var UserId:String = "b6adb9a1-9f93-49b9-8793-d6f91d44e4a3"
 
-    static func == (lhs: User, rhs: User) -> Bool {
+    public static func == (lhs: User, rhs: User) -> Bool {
         return lhs.id == rhs.id
     }
-    func hash(into hasher: inout Hasher) {
+    public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
     
-    var id:String = UserId
+    public var id:String = UserId
     var firstName:String? = "-"
     var lastName:String? = "-"
-    var clientId:String?
+    var clientId:String? = "-"
     var configured:Bool? = false
-    var cumulus:String?
-    var points:String?
+    var cumulus:String? = "-"
+    var points:String? = "-"
     
-    var habits:Habits?
-    var locations:Location?
-    var
+    var habits:Habits = Habits()
+    var locations:Locations = Locations()
+    var allergies:Allergies = Allergies()
     
     public func Name() -> String {
         let firstChar = (self.firstName ?? "M").substring(to: String.Index(encodedOffset: 1))
@@ -67,7 +63,7 @@ class User: Decodable, Encodable, ObservableObject, Identifiable, Hashable, Equa
     }
 }
 
-class OnboardingAPI {
+public class OnboardingAPI: ObservableObject {
     static var titles:[String] = [
         "Verkehrsunfall / Kollision",
         "Marderschaden",
@@ -75,11 +71,13 @@ class OnboardingAPI {
         "Assistance"
     ]
     static var Instance:OnboardingAPI = OnboardingAPI()
-    var currentUser:User?;
+
+    public var objectWillChange = PassthroughSubject<Void, Never>()
+    @ObservedObject var user:User = DemoUser() { didSet { objectWillChange.send() }}
     
     public init() {
-        GetUser(completion: { (user) in
-            self.currentUser = user
+        GetUser(completion: { (newUser) in
+            self.user = newUser
         })
     }
     
@@ -125,15 +123,24 @@ class OnboardingAPI {
         }
     }
     
-    
-    public static func DemoUser() {
-        var user = User()
+    public static func DemoUser() -> User {
+        let user = User()
+        user.firstName = "Lolo"
+        user.lastName = "Haha"
+        user.cumulus = "4242"
+        user.points = "2222"
         user.habits = Habits()
-        user. = Habits()
-        user.habits = Habits()
-        user.habits = Habits()
+        user.locations = Locations()
+        user.allergies = Allergies()
+        return user
     }
     
 }
 
 
+
+struct OnboardingAPI_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+    }
+}

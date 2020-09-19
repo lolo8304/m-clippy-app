@@ -11,13 +11,14 @@ struct SettingsView: View {
     static let MigrosColor:Color = Color(red: 255 / 255, green: 102 / 255, blue: 3   / 255)
     static let MigrosColorCumulus:Color = Color(red: 0 / 255, green: 61 / 255, blue: 141 / 255)
 
-    @State var user:User = OnboardingAPI.Instance.currentUser ?? User()
+    @EnvironmentObject var api:OnboardingAPI
+    //@EnvironmentObject var user:User
     @State var showingAlert:Bool
-    
+        
     var body: some View {
         NavigationView {
             VStack {
-                Text("\(user.points ?? "0")").font(.largeTitle)
+                Text("\(self.api.user.points ?? "0")").font(.largeTitle)
                 Text("Cumulus-Points")
                     .font(.caption)
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
@@ -51,17 +52,17 @@ struct SettingsView: View {
                 .border(Color.gray, width: 0.3)
                 List {
                     NavigationLink(destination:
-                                    OnboardingSetup(user: self.user)) {
+                                    OnboardingSetup(user: self.api.user)) {
                         Text("m-Clippy Onboarding")
                     }
                     NavigationLink(destination:
-                                    OnboardingSetup(user: self.user)) {
+                                    OnboardingSetup(user: self.api.user)) {
                         Text("m-Clippy Tips!")
-                    }.disabled(!(self.user.configured ?? true))
+                    }.disabled(!(self.api.user.configured ?? true))
                 }
                 Spacer()
             }
-            .navigationBarTitle(Text("Profile: \(user.Name())"))
+            .navigationBarTitle(Text("Profile: \(self.api.user.Name())"))
             .navigationBarItems(
                 leading: HStack {
                     Button(action: {
@@ -83,8 +84,8 @@ struct SettingsView: View {
         }
     }
     func reset() {
-        OnboardingAPI().GetUser { (user) in
-            self.user = user
+        OnboardingAPI.Instance.GetUser { (user) in
+            //self.user = user
         }
     }
 }
@@ -92,8 +93,7 @@ struct SettingsView: View {
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            SettingsView(showingAlert: false)
-            SettingsView(showingAlert: false)
+            SettingsView(showingAlert: false).environmentObject(OnboardingAPI.Instance.user);
         }
     }
 }

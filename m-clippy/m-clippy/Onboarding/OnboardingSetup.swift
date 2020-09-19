@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct OnboardingSetup: View {
-    @State var user:User
+    @ObservedObject var user:User
     
     var body: some View {
         ScrollView {
             VStack {
                 ClippyImageHeader()
-                OnboardingHabits(habits: user.habits!, content: {
+                OnboardingHabits(user: self.user, content: {
                         Text("ddd")
                 })
                 Spacer()
@@ -37,6 +37,7 @@ struct OnboardingSetup: View {
 
 struct OnboardingSetup_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingSetup(user: OnboardingAPI.Instance.currentUser ?? User())
+        let o = OnboardingAPI.DemoUser()
+        OnboardingSetup(user: o)
     }
 }
