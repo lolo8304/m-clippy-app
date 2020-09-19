@@ -22,14 +22,18 @@ struct Habits:Codable {
     var halal:Bool
 }
 
+struct Location:Codable {
+    var regional:Int = 1
+    var national:Int = 2
+    var outside:Int = 3
+    var exclusion1:String?
+    var exclusion2:String?
+}
+
 
 class User: Decodable, Encodable, ObservableObject, Identifiable, Hashable, Equatable {
     static var UserId:String = "b6adb9a1-9f93-49b9-8793-d6f91d44e4a3"
 
-    init(id: String, name: String) {
-        self.id = id
-        self.name = name
-    }
     static func == (lhs: User, rhs: User) -> Bool {
         return lhs.id == rhs.id
     }
@@ -37,13 +41,19 @@ class User: Decodable, Encodable, ObservableObject, Identifiable, Hashable, Equa
         hasher.combine(id)
     }
     
-    var id:String
-    var name:String
+    var id:String = UserId
+    var firstName:String? = "-"
+    var lastName:String? = "-"
     var clientId:String?
-    var configured:Bool?
+    var configured:Bool? = false
     var cumulus:String?
     var points:String?
     var habits:Habits?
+    
+    public func Name() -> String {
+        let firstChar = (self.firstName ?? "M").substring(to: String.Index(encodedOffset: 1))
+        return "\(firstChar). \(self.lastName ?? "Tester")";
+    }
 }
 
 class OnboardingAPI {
