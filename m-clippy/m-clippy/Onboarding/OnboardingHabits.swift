@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct OnboardingHabits<Content: View>: View {
-    @ObservedObject var user: User
+    @EnvironmentObject var api: OnboardingAPI
     let content: Content
     
-    init(user: User, @ViewBuilder content: () -> Content) {
+    init(@ViewBuilder content: () -> Content) {
         self.content = content()
-        self.user = user
     }
 
     var body: some View {
@@ -21,19 +20,19 @@ struct OnboardingHabits<Content: View>: View {
             VStack(alignment: .leading) {
                 Text("I prefer the following food")
                     .font(.title).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                Toggle(isOn: $user.habits.bio) {
+                Toggle(isOn: $api.user.habits.bio) {
                     Text("Bio")
                 }
-                Toggle(isOn: $user.habits.vegetarian) {
+                Toggle(isOn: $api.user.habits.vegetarian) {
                     Text("Vegetarian")
                 }
-                Toggle(isOn: $user.habits.vegan) {
+                Toggle(isOn: $api.user.habits.vegan) {
                     Text("Vegan")
                 }
-                Toggle(isOn: $user.habits.casher) {
+                Toggle(isOn: $api.user.habits.casher) {
                     Text("Casher")
                 }
-                Toggle(isOn: $user.habits.halal) {
+                Toggle(isOn: $api.user.habits.halal) {
                     Text("Halal")
                 }
                 content
@@ -46,9 +45,9 @@ struct OnboardingHabits<Content: View>: View {
 
 struct OnboardingHabits_Previews: PreviewProvider {
     static var previews: some View {
-        let u = OnboardingAPI.DemoUser()
-        OnboardingHabits(user: u, content: {
+        let api = OnboardingAPI.Instance
+        OnboardingHabits(content: {
             Text("hello")
-        })
+        }).environmentObject(api)
     }
 }

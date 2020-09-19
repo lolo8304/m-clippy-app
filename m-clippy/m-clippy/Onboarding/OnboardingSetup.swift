@@ -8,19 +8,19 @@
 import SwiftUI
 
 struct OnboardingSetup: View {
-    @ObservedObject var user:User
+    @EnvironmentObject var api:OnboardingAPI
     
     var body: some View {
         ScrollView {
             VStack {
                 ClippyImageHeader()
-                OnboardingHabits(user: self.user, content: {
+                OnboardingHabits(content: {
                         Text("ddd")
-                })
+                }).environmentObject(api)
                 Spacer()
             }
             .padding(.all, 0)
-            .navigationBarTitle(Text("Clippy: \(self.user.Name())"))
+            .navigationBarTitle(Text("Clippy: \(self.api.user.Name())"))
             .navigationViewStyle(StackNavigationViewStyle())
             .navigationBarItems(
                 trailing: HStack {
@@ -37,7 +37,7 @@ struct OnboardingSetup: View {
 
 struct OnboardingSetup_Previews: PreviewProvider {
     static var previews: some View {
-        let o = OnboardingAPI.DemoUser()
-        OnboardingSetup(user: o)
+        let api = OnboardingAPI.Instance
+        OnboardingSetup().environmentObject(api)
     }
 }

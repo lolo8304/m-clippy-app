@@ -52,11 +52,11 @@ struct SettingsView: View {
                 .border(Color.gray, width: 0.3)
                 List {
                     NavigationLink(destination:
-                                    OnboardingSetup(user: self.api.user)) {
+                                    OnboardingSetup().environmentObject(api)) {
                         Text("m-Clippy Onboarding")
                     }
                     NavigationLink(destination:
-                                    OnboardingSetup(user: self.api.user)) {
+                                    OnboardingSetup().environmentObject(api)) {
                         Text("m-Clippy Tips!")
                     }.disabled(!(self.api.user.configured ?? true))
                 }
@@ -93,7 +93,7 @@ struct SettingsView: View {
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            SettingsView(showingAlert: false).environmentObject(OnboardingAPI.Instance.user);
+            SettingsView(showingAlert: false).environmentObject(OnboardingAPI.Instance);
         }
     }
 }
