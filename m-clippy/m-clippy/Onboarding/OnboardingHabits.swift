@@ -16,7 +16,7 @@ struct OnboardingHabits<Content: View>: View {
     }
 
     var body: some View {
-        ClippyBox(title: "I prefer the following food", subTitle:"(we will help you choosing the right products)", backColor: SettingsView.MigrosColorCumulus, foreColor: Color.white) {
+        ClippyBox(title: "I prefer the following food", subTitle:"(we will help you choosing the right products)", backColor: SettingsView.MigrosColorCumulus, foreColor: Color.white, image: Image("habits-OK") ) {
             Toggle(isOn: $api.user.habits.bio) {
                 Text("Bio")
             }

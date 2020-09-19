@@ -12,8 +12,8 @@ struct OnboardingSetup: View {
     
     var body: some View {
         ScrollView {
+            ClippyImageHeader()
             VStack {
-                ClippyImageHeader()
                 OnboardingHabits(content: {
                         Text("ddd")
                 }).environmentObject(api)
@@ -27,7 +27,8 @@ struct OnboardingSetup: View {
                     Button(action:done, label: { Text("Done") })
                 }
             )
-        }.background(Color.green)
+            Spacer()
+        }
     }
     
     func done() {

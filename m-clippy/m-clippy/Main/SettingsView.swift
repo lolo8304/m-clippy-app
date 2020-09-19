@@ -11,6 +11,7 @@ struct SettingsView: View {
     static let MigrosColor:Color = Color(red: 255 / 255, green: 102 / 255, blue: 3   / 255)
     static let MigrosColorCumulus:Color = Color(red: 0 / 255, green: 61 / 255, blue: 141 / 255)
     static let MigrosColorWhite:Color = Color(red: 255 / 255, green: 255 / 255, blue: 255 / 255)
+    static let MigrosColorGray:Color = Color(red: 236 / 255, green: 236 / 255, blue: 236 / 255)
 
     @EnvironmentObject var api:OnboardingAPI
     //@EnvironmentObject var user:User
