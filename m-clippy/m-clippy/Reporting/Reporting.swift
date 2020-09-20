@@ -19,6 +19,9 @@ struct Reporting: View {
                 ReportingSustainability().environmentObject(api)
                 ReportingAlerts().environmentObject(api)
                 ReportingLifestyle().environmentObject(api)
+                ReportingAllergens().environmentObject(api)
+                ReportingViolations().environmentObject(api)
+                ReportingProducingCountries().environmentObject(api)
                 Spacer()
             }
             .padding(.all, 0)

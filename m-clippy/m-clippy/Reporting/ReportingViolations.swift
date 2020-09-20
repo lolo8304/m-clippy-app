@@ -8,42 +8,42 @@
 import SwiftUI
 import SwiftUICharts
 
-struct ReportingLocations: View {
+struct ReportingViolations: View {
     @EnvironmentObject var api: ClippyAPI
     
-    //self.api.reportings.RegionalSum, self.api.reportings.NationalSum, self.api.reportings.OutsideSum
+    
     var body: some View {
-        ClippyBox(title: "Origin of products", subTitle:"Clippy tells you the total costs of all products per origin", backColor: SettingsView.MigrosColorWhite, foreColor: Color.black, image: Image("location-OK") ) {
+        ClippyBox(title: "Violations", subTitle:"See which products violets your objectives", backColor: SettingsView.MigrosColor, foreColor: Color.white, image: Image("recycling") ) {
             VStack {
                 HStack {
-                    Image("zurich")
+                    Image("cars")
                         .resizable()
                         .frame(width: 50, height: 50)
                     VStack(alignment: .leading) {
-                        Text("Regional").font(.headline)
+                        Text("km you could drive").font(.headline)
                     }.padding(.leading, 1)
                     Spacer()
-                    Text("\(Int(self.api.reportings.RegionalSum)) CHF").font(.title)
+                    Text("\(self.api.reportings.PlanesKm)").font(.largeTitle)
                 }.padding(.init(top:4, leading: 0, bottom: 4, trailing: 8))
                 HStack {
-                    Image("switzerland")
+                    Image("planes")
                         .resizable()
                         .frame(width: 50, height: 50)
                     VStack(alignment: .leading) {
-                        Text("Swiss product").font(.headline)
+                        Text("Miles you could fly").font(.headline)
                     }.padding(.leading, 1)
                     Spacer()
-                    Text("\(Int(self.api.reportings.NationalSum)) CHF").font(.title)
+                    Text("\(self.api.reportings.CarKm)").font(.largeTitle)
                 }.padding(.init(top:4, leading: 0, bottom: 4, trailing: 8))
                 HStack {
-                    Image("world")
+                    Image("countries")
                         .resizable()
                         .frame(width: 50, height: 50)
                     VStack(alignment: .leading) {
-                        Text("Outside of Switzerland").font(.headline)
+                        Text("No of countries from your products").font(.headline)
                     }.padding(.leading, 1)
                     Spacer()
-                    Text("\(Int(self.api.reportings.OutsideSum)) CHF").font(.title)
+                    Text("\(self.api.reportings.CountriesCounter)").font(.largeTitle)
                 }.padding(.init(top:4, leading: 0, bottom: 4, trailing: 8))
             }
         }
@@ -51,9 +51,9 @@ struct ReportingLocations: View {
     }
 }
 
-struct ReportingLocations_Previews: PreviewProvider {
+struct ReportingViolations_Previews: PreviewProvider {
     static var previews: some View {
         let api = ClippyAPI.Instance
-        ReportingLocations().environmentObject(api)
+        ReportingViolations().environmentObject(api)
     }
 }

@@ -183,6 +183,9 @@ public class ClippyAPI: ObservableObject {
 
 public class Reportings : Codable, ObservableObject {
     var list:[Violation] = []
+    
+    var ProductsAnalyzed:Int = 91
+    
     var Score:Int = 91
     
     var HabitsCounter: Int = 0
@@ -192,17 +195,32 @@ public class Reportings : Codable, ObservableObject {
     var CountriesCounter: Int = 0
     var PlanesKm:String = "100km"
     var CarKm:String = "71km"
+    
     var NationalSum:Double = 5.0
     var RegionalSum:Double = 78.0
     var OutsideSum: Double = 14.0
     
-    var allergens = Dictionary<String, Int>()
+    var NotVeganCounter:Double = 0.0
+    var VeganCounter:Double = 0.0
     
+    var NotVegetarianCounter:Double = 0.0
+    var VegetarianCounter:Double = 0.0
+    
+    var NotBioCounter:Double = 5.0
+    var BioCounter:Double = 1.0
+    
+    var NoAllergensCounter:Double = 5.0
+    var AllergensCounter:Double = 6.0
+    
+    
+    var allergens = Dictionary<String, Int>()
+    var ProducingCountries = Dictionary<String, Int>()
+
 }
 
 public class Violation : Codable, ObservableObject {
-    var Thumbnail:String = ""
-    var Image:String = ""
+    var Thumbnail:String? = ""
+    var Image:String? = ""
     var Price:Double = 0.0
     var Quantity:String = "100g"
     var ArticleID:String = "104223700000"

@@ -13,7 +13,7 @@ struct ReportingSustainability: View {
     
     
     var body: some View {
-        ClippyBox(title: "Sustainability", subTitle:"Clippy tells CO2 equivalent to", backColor: SettingsView.MigrosColor, foreColor: Color.white, image: Image("alerts") ) {
+        ClippyBox(title: "Sustainability", subTitle:"Clippy tells CO2 equivalent to", backColor: SettingsView.MigrosColorWhite, foreColor: Color.black, image: Image("recycling") ) {
             VStack {
                 HStack {
                     Image("cars")
