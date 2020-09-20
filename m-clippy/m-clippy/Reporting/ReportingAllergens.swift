@@ -33,7 +33,7 @@ struct ReportingAllergens: View {
     }
     
     var body: some View {
-        ClippyBox(title: "Allergenes", subTitle:"Clippy warns you about allergens in your products you bought", backColor: SettingsView.MigrosColorGreen, foreColor: Color.black, image: Image("allergy-NOK") ) {
+        ClippyBox(title: "Allergenes", subTitle:"Clippy warns you about allergens in your products", backColor: SettingsView.MigrosColorGreen, foreColor: Color.black, image: Image("allergy-NOK") ) {
             ForEach(self.allergenTexts.indices) { i in
                 HStack {
                     VStack(alignment: .leading) {

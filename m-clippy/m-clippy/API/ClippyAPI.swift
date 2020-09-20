@@ -215,13 +215,16 @@ public class Reportings : Codable, ObservableObject {
     
     var allergens = Dictionary<String, Int>()
     var ProducingCountries = Dictionary<String, Int>()
-    var ProducingCountries2 = Dictionary<String, Int>()
 
 }
 
 public class Violation : Codable, ObservableObject {
-    var Thumbnail:String? = ""
-    var Image:String? = ""
+    var Name:String = ""
+    var Thumbnail:String? = "https://alexdunndev.files.wordpress.com/2020/01/empty_app_icon_512.png?w=512&h=510&crop=1"
+    var Original:String = "https://alexdunndev.files.wordpress.com/2020/01/empty_app_icon_512.png?w=512&h=510&crop=1"
+
+    var Image:String? = "https://alexdunndev.files.wordpress.com/2020/01/empty_app_icon_512.png?w=512&h=510&crop=1"
+    
     var Price:Double = 0.0
     var Quantity:String = "100g"
     var ArticleID:String = "104223700000"

@@ -14,7 +14,7 @@ struct Reporting: View {
         ScrollView {
             ReportingHeader()
             VStack {
-                ReportingSummary().environmentObject(api)
+                //ReportingSummary().environmentObject(api)
                 ReportingLocations().environmentObject(api)
                 ReportingSustainability().environmentObject(api)
                 ReportingAlerts().environmentObject(api)

@@ -40,6 +40,7 @@ struct ReportingHeader: View {
             .frame(height:40, alignment: .center)
             .border(Color.gray, width: 0.3)
         }.frame(height:100, alignment: .center)
+        Text("Clippy uses your Cumulus data in realtime to give you insights about your consumption  expectations and true behaviors.").padding(.init(top:4, leading: 18, bottom: 4, trailing: 18))
     }
 }
 

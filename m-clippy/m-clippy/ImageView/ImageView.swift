@@ -30,8 +30,8 @@ struct ImageView: View {
         Image(uiImage: self.image)
             .resizable()
             .aspectRatio(contentMode: .fit)
-            .clipShape(Circle())
-            .overlay(Circle().stroke(Color.black, lineWidth: 2))
+            //.clipShape(Circle())
+            //.overlay(Circle().stroke(Color.black, lineWidth: 2))
             .frame(width:self.width, height:self.width)
             .onReceive(self.imageLoader.didChange) { image in
                 self.image = image

@@ -13,7 +13,7 @@ struct ReportingLocations: View {
     
     //self.api.reportings.RegionalSum, self.api.reportings.NationalSum, self.api.reportings.OutsideSum
     var body: some View {
-        ClippyBox(title: "Origin of products", subTitle:"Clippy tells you the total costs of all products per origin", backColor: SettingsView.MigrosColorWhite, foreColor: Color.black, image: Image("location-OK") ) {
+        ClippyBox(title: "Origin of products", subTitle:"Clippy tells you where you spend most of your money", backColor: SettingsView.MigrosColorWhite, foreColor: Color.black, image: Image("location-OK") ) {
             VStack {
                 HStack {
                     Image("zurich")

@@ -12,7 +12,7 @@ struct ReportingProducingCountries: View {
     @EnvironmentObject var api: ClippyAPI
     
     var producingKeys:[String] {
-        self.api.reportings.ProducingCountries2.sorted(by: { (arg0, arg1) -> Bool in
+        self.api.reportings.ProducingCountries.sorted(by: { (arg0, arg1) -> Bool in
             let (key0, value0) = arg0
             let (key1, value1) = arg1
             return value0 > value1 || (value0 == value1 && key0 < key1)
@@ -22,7 +22,7 @@ struct ReportingProducingCountries: View {
         }
     }
     var producingValues:[Int] {
-        self.api.reportings.ProducingCountries2.sorted(by: { (arg0, arg1) -> Bool in
+        self.api.reportings.ProducingCountries.sorted(by: { (arg0, arg1) -> Bool in
             let (key0, value0) = arg0
             let (key1, value1) = arg1
             return value0 > value1 || (value0 == value1 && key0 < key1)
@@ -33,7 +33,7 @@ struct ReportingProducingCountries: View {
     }
     
     var body: some View {
-        ClippyBox(title: "Producing countries", subTitle:"Clippy shows you where the products had been produced", backColor: SettingsView.MigrosColorWhite, foreColor: Color.black, image: Image("world") ) {
+        ClippyBox(title: "Producing countries", subTitle:"Clippy shows you where the products have been produced", backColor: SettingsView.MigrosColor, foreColor: Color.white, image: Image("world") ) {
             ForEach(self.producingKeys.indices) { i in
                 HStack {
                     VStack(alignment: .leading) {
@@ -43,8 +43,8 @@ struct ReportingProducingCountries: View {
                     Text("\(self.producingValues[i])").font(.largeTitle)
                 }
             }.padding(.init(top:0, leading: 0, bottom: 0, trailing: 8))
-            .foregroundColor(Color.black)
-            .background(SettingsView.MigrosColorWhite)
+            .foregroundColor(Color.white)
+            .background(SettingsView.MigrosColor)
         }
 
     }

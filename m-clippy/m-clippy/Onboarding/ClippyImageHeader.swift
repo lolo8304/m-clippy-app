@@ -24,6 +24,8 @@ struct ClippyImageHeader: View {
                 .padding(0)
         }
         .frame(height:100, alignment: .center)
+        Text("Tell Clippy what your preferences are.")
+            .padding(.init(top:4, leading: 18, bottom: 4, trailing: 18))
     }
 }
 

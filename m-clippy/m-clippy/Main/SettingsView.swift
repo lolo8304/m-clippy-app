@@ -77,6 +77,18 @@ struct SettingsView: View {
                     }
                 }
                 Spacer()
+                HStack {
+                    Image("logo")
+                        .resizable()
+                        .frame(width: 100, height: 100, alignment: .topLeading)
+                        .aspectRatio(contentMode: .fit)
+                        .padding(0)
+
+                    Text("Which kind of consumer are you? Set the preferences and Clippy will help you with some tips - especially in the areas eating habits, origin of products and allergies.")
+                        
+                }.padding(.init(top: 18, leading: 18, bottom: 18, trailing: 18))
+
+
             }
             .navigationBarTitle(Text("Profile: \(self.api.user.Name())"))
             .navigationBarItems(
