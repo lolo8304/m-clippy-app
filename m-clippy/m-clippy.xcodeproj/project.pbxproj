@@ -13,6 +13,7 @@
 		E14F9AE22515A53E00D110CE /* m_clippyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14F9AE12515A53E00D110CE /* m_clippyApp.swift */; };
 		E14F9AE62515A54000D110CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E14F9AE52515A54000D110CE /* Assets.xcassets */; };
 		E14F9AE92515A54000D110CE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E14F9AE82515A54000D110CE /* Preview Assets.xcassets */; };
+		E156E6D52517B598001B6A98 /* ClippyMatrixRow3Columns.swift in Sources */ = {isa = PBXBuildFile; fileRef = E156E6D42517B598001B6A98 /* ClippyMatrixRow3Columns.swift */; };
 		E16C1B3D2515EFC9005A9FDF /* ClippyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16C1B3C2515EFC9005A9FDF /* ClippyAPI.swift */; };
 		E16C1B4325160466005A9FDF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16C1B4225160466005A9FDF /* SettingsView.swift */; };
 		E16C1B4925161A03005A9FDF /* OnboardingSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16C1B4825161A03005A9FDF /* OnboardingSetup.swift */; };
@@ -44,6 +45,7 @@
 		E14F9AE52515A54000D110CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E14F9AE82515A54000D110CE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E14F9AEA2515A54000D110CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E156E6D42517B598001B6A98 /* ClippyMatrixRow3Columns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClippyMatrixRow3Columns.swift; sourceTree = "<group>"; };
 		E16C1B3C2515EFC9005A9FDF /* ClippyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClippyAPI.swift; sourceTree = "<group>"; };
 		E16C1B4225160466005A9FDF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		E16C1B4825161A03005A9FDF /* OnboardingSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSetup.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				E1F5C55C2516900F00EE284F /* ForEachWithIndex.swift */,
 				E16C1B532516439E005A9FDF /* ClippyBox.swift */,
 				E12517AD2516D84D003E0176 /* ClippyBarYesNoBox.swift */,
+				E156E6D42517B598001B6A98 /* ClippyMatrixRow3Columns.swift */,
 				E16C1B4225160466005A9FDF /* SettingsView.swift */,
 			);
 			path = Main;
@@ -263,6 +266,7 @@
 				E17A3D232516BCE000C1E1BF /* ImageView.swift in Sources */,
 				E1F5C556251677E200EE284F /* OnboardingLocations.swift in Sources */,
 				E12517AE2516D84D003E0176 /* ClippyBarYesNoBox.swift in Sources */,
+				E156E6D52517B598001B6A98 /* ClippyMatrixRow3Columns.swift in Sources */,
 				E16C1B542516439E005A9FDF /* ClippyBox.swift in Sources */,
 				E12517B32516E41F003E0176 /* ReportingAllergens.swift in Sources */,
 				E17A3D242516BCE000C1E1BF /* ImageLoader.swift in Sources */,

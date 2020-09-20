@@ -14,7 +14,7 @@ struct ReportingAlerts: View {
     
     var body: some View {
         ClippyBox(title: "Alerts", subTitle:"Clippy has alerted you so many times", backColor: SettingsView.MigrosColorCumulus, foreColor: Color.white, image: Image("alerts") ) {
-            VStack {
+            VStack {                
                 HStack {
                     Image("habits-NOK")
                         .resizable()

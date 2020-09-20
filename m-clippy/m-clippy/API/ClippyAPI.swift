@@ -65,7 +65,7 @@ public class User: Decodable, Encodable, ObservableObject, Identifiable, Hashabl
     var allergies:Allergies = Allergies()
     
     public func Name() -> String {
-        let firstChar = (self.firstName ?? "M").substring(to: String.Index(encodedOffset: 1))
+        let firstChar = (self.lastName ?? "M").substring(to: String.Index(encodedOffset: 1))
         return "\(firstChar). \(self.lastName ?? "Tester")"
     }
 }
@@ -73,7 +73,7 @@ public class User: Decodable, Encodable, ObservableObject, Identifiable, Hashabl
 public class ClippyAPI: ObservableObject {
     static var Instance:ClippyAPI = ClippyAPI()
 
-    static var staticExcludedCountries:[String] = [
+    public var staticExcludedCountries:[String] = [
         "China",
         "USA",
         "Belarus",
