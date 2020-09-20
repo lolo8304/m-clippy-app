@@ -215,6 +215,7 @@ public class Reportings : Codable, ObservableObject {
     
     var allergens = Dictionary<String, Int>()
     var ProducingCountries = Dictionary<String, Int>()
+    var ProducingCountries2 = Dictionary<String, Int>()
 
 }
 

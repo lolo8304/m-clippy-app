@@ -42,7 +42,7 @@ struct ReportingAllergens: View {
                     Spacer()
                     Text("\(self.allergenValues[i])").font(.largeTitle)
                 }
-            }.padding(.init(top:4, leading: 0, bottom: 4, trailing: 8))
+            }.padding(.init(top:2, leading: 0, bottom: 2, trailing: 8))
             .foregroundColor(Color.black)
             .background(SettingsView.MigrosColorGreen)
         }

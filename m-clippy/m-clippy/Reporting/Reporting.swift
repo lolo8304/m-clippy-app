@@ -24,7 +24,7 @@ struct Reporting: View {
                 ReportingProducingCountries().environmentObject(api)
                 Spacer()
             }
-            .padding(.all, 0)
+            .padding(EdgeInsets(top: 18, leading: 0, bottom: 18, trailing: 0))
             .navigationBarTitle(Text("Clippy Tips \(self.api.user.firstName ?? "-")"))
             .navigationViewStyle(StackNavigationViewStyle())
             /*.navigationBarItems(
