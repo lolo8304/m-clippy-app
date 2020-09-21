@@ -66,7 +66,7 @@ public class User: Decodable, Encodable, ObservableObject, Identifiable, Hashabl
     
     public func Name() -> String {
         let firstChar = (self.lastName ?? "M").substring(to: String.Index(encodedOffset: 1))
-        return "\(firstChar). \(self.lastName ?? "Tester")"
+        return "\(self.firstName ?? "Lolo") \(firstChar)."
     }
 }
 
