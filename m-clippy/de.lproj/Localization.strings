@@ -104,7 +104,7 @@
 "Product abc" = "Product abc";
 
 /* No comment provided by engineer. */
-"Profile: %@" = "Profile: %@";
+"Profile: %@" = "Profile %@";
 
 /* No comment provided by engineer. */
 "Regional" = "Regional";
