@@ -145,3 +145,11 @@
 /* No comment provided by engineer. */
 "You selected: %@" = "You selected: %@";
 
+/* No comment provided by engineer. */
+"reporting.intro" = "Clippy uses your Cumulus data in realtime to give you insights about your consumption  expectations and true behaviors.";
+
+/* No comment provided by engineer. */
+"main.intro" = "Which kind of consumer are you? Set the preferences and Clippy will help you with some tips - especially in the areas eating habits, origin of products and allergies.";
+
+/* No comment provided by engineer. */
+"Clippy tells you where you spend most of your money" = "Clippy tells you where you spend most of your money";
