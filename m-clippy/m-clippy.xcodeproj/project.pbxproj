@@ -30,6 +30,7 @@
 		E17A3D272516C28700C1E1BF /* ReportingSustainability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17A3D262516C28700C1E1BF /* ReportingSustainability.swift */; };
 		E17A3D2A2516C68C00C1E1BF /* ReportingLifestyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17A3D292516C68C00C1E1BF /* ReportingLifestyle.swift */; };
 		E17A3D2D2516D0B800C1E1BF /* ReportingViolations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17A3D2C2516D0B800C1E1BF /* ReportingViolations.swift */; };
+		E1C4E8B1251A4212006FB119 /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1C4E8B3251A4212006FB119 /* Localization.strings */; };
 		E1F5C556251677E200EE284F /* OnboardingLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5C555251677E200EE284F /* OnboardingLocations.swift */; };
 		E1F5C5592516805500EE284F /* OnboardingAllergies.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5C5582516805500EE284F /* OnboardingAllergies.swift */; };
 		E1F5C55D2516900F00EE284F /* ForEachWithIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5C55C2516900F00EE284F /* ForEachWithIndex.swift */; };
@@ -61,6 +62,8 @@
 		E17A3D262516C28700C1E1BF /* ReportingSustainability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportingSustainability.swift; sourceTree = "<group>"; };
 		E17A3D292516C68C00C1E1BF /* ReportingLifestyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportingLifestyle.swift; sourceTree = "<group>"; };
 		E17A3D2C2516D0B800C1E1BF /* ReportingViolations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportingViolations.swift; sourceTree = "<group>"; };
+		E1C4E8B2251A4212006FB119 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
+		E1C4E8B5251A4216006FB119 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localization.strings; sourceTree = "<group>"; };
 		E1F5C555251677E200EE284F /* OnboardingLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLocations.swift; sourceTree = "<group>"; };
 		E1F5C5582516805500EE284F /* OnboardingAllergies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingAllergies.swift; sourceTree = "<group>"; };
 		E1F5C55C2516900F00EE284F /* ForEachWithIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForEachWithIndex.swift; sourceTree = "<group>"; };
@@ -82,6 +85,7 @@
 		E14F9AD52515A53E00D110CE = {
 			isa = PBXGroup;
 			children = (
+				E1C4E8B3251A4212006FB119 /* Localization.strings */,
 				E14F9AE02515A53E00D110CE /* m-clippy */,
 				E14F9ADF2515A53E00D110CE /* Products */,
 			);
@@ -98,10 +102,11 @@
 		E14F9AE02515A53E00D110CE /* m-clippy */ = {
 			isa = PBXGroup;
 			children = (
-				E17A3D202516BCC500C1E1BF /* ImageView */,
 				E1F5C5602516947900EE284F /* Reporting */,
+				E1C4E898251A1D79006FB119 /* Scanning */,
 				E16C1B47251619C6005A9FDF /* Onboarding */,
 				E16C1B4125160450005A9FDF /* Main */,
+				E1C4E896251A1CDC006FB119 /* Components */,
 				E16C1B3B2515EF8E005A9FDF /* API */,
 				E14F9AE12515A53E00D110CE /* m_clippyApp.swift */,
 				E14F9AE52515A54000D110CE /* Assets.xcassets */,
@@ -130,10 +135,6 @@
 		E16C1B4125160450005A9FDF /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				E1F5C55C2516900F00EE284F /* ForEachWithIndex.swift */,
-				E16C1B532516439E005A9FDF /* ClippyBox.swift */,
-				E12517AD2516D84D003E0176 /* ClippyBarYesNoBox.swift */,
-				E156E6D42517B598001B6A98 /* ClippyMatrixRow3Columns.swift */,
 				E16C1B4225160466005A9FDF /* SettingsView.swift */,
 			);
 			path = Main;
@@ -143,7 +144,6 @@
 			isa = PBXGroup;
 			children = (
 				E16C1B4825161A03005A9FDF /* OnboardingSetup.swift */,
-				E16C1B4C25162C5D005A9FDF /* ClippyImageHeader.swift */,
 				E16C1B4F25162C9A005A9FDF /* OnboardingHabits.swift */,
 				E1F5C555251677E200EE284F /* OnboardingLocations.swift */,
 				E1F5C5582516805500EE284F /* OnboardingAllergies.swift */,
@@ -158,6 +158,26 @@
 				E17A3D212516BCDF00C1E1BF /* ImageView.swift */,
 			);
 			path = ImageView;
+			sourceTree = "<group>";
+		};
+		E1C4E896251A1CDC006FB119 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E17A3D202516BCC500C1E1BF /* ImageView */,
+				E16C1B4C25162C5D005A9FDF /* ClippyImageHeader.swift */,
+				E16C1B532516439E005A9FDF /* ClippyBox.swift */,
+				E12517AD2516D84D003E0176 /* ClippyBarYesNoBox.swift */,
+				E156E6D42517B598001B6A98 /* ClippyMatrixRow3Columns.swift */,
+				E1F5C55C2516900F00EE284F /* ForEachWithIndex.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		E1C4E898251A1D79006FB119 /* Scanning */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scanning;
 			sourceTree = "<group>";
 		};
 		E1F5C5602516947900EE284F /* Reporting */ = {
@@ -220,6 +240,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				de,
 				Base,
 			);
 			mainGroup = E14F9AD52515A53E00D110CE;
@@ -241,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E14F9AE92515A54000D110CE /* Preview Assets.xcassets in Resources */,
+				E1C4E8B1251A4212006FB119 /* Localization.strings in Resources */,
 				E14F9AE62515A54000D110CE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,6 +302,18 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E1C4E8B3251A4212006FB119 /* Localization.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E1C4E8B2251A4212006FB119 /* en */,
+				E1C4E8B5251A4216006FB119 /* de */,
+			);
+			name = Localization.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		E14F9AEB2515A54000D110CE /* Debug */ = {

@@ -12,7 +12,8 @@ struct SettingsView: View {
     static let MigrosColor:Color = Color(red: 255 / 255, green: 102 / 255, blue: 3   / 255)
     static let MigrosColorCumulus:Color = Color(red: 0 / 255, green: 61 / 255, blue: 141 / 255)
     static let MigrosColorGreen:Color = Color(red: 121 / 255, green: 188 / 255, blue: 56 / 255)
-    static let MigrosColorWhite:Color = Color(red: 255 / 255, green: 255 / 255, blue: 255 / 255)
+    //static let MigrosColorWhite:Color = Color(red: 255 / 255, green: 255 / 255, blue: 255 / 255)
+    static let MigrosColorWhite:Color = Color.offWhite
     static let MigrosColorGray:Color = Color(red: 236 / 255, green: 236 / 255, blue: 236 / 255)
 
     static let MigrosMultiStyle = ChartStyle(backgroundColor: Color.green.opacity(0.2),
@@ -33,11 +34,11 @@ struct SettingsView: View {
         NavigationView {
             VStack {
                 Text("\(self.api.user.points ?? "0")").font(.largeTitle)
-                Text("Cumulus-Points")
+                Text("Cumulus-Points".t())
                     .font(.caption)
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     .foregroundColor(Self.MigrosColor)
-                Text("Collection period").font(.caption).padding(0)
+                Text("Collection period".t()).font(.caption).padding(0)
                 Image("cumulus")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -45,7 +46,7 @@ struct SettingsView: View {
                 HStack {
                     HStack {
                         Spacer()
-                        Text("Settings")
+                        Text("Settings".t())
                         Spacer()
                     }
                     .frame(height:40, alignment: .center)
@@ -67,13 +68,13 @@ struct SettingsView: View {
                 List {
                     NavigationLink(destination:
                                     OnboardingSetup().environmentObject(api)) {
-                        Text("m-Clippy Onboarding")
+                        Text("m-Clippy Onboarding".t())
                     }
                     NavigationLink(destination:
                                     Reporting()
                                         .environmentObject(api)
                             ) {
-                        Text("m-Clippy Tips!")
+                        Text("m-Clippy Tips!".t())
                     }
                 }
                 Spacer()
@@ -84,13 +85,11 @@ struct SettingsView: View {
                         .aspectRatio(contentMode: .fit)
                         .padding(0)
 
-                    Text("Which kind of consumer are you? Set the preferences and Clippy will help you with some tips - especially in the areas eating habits, origin of products and allergies.")
+                    Text("main.intro".t())
                         
                 }.padding(.init(top: 18, leading: 18, bottom: 18, trailing: 18))
-
-
             }
-            .navigationBarTitle(Text("Profile: \(self.api.user.Name())"))
+            .navigationBarTitle(Text("Profile: %@".tp(self.api.user.Name())))
             .navigationBarItems(
                 leading: HStack {
                     Button(action: {
@@ -100,7 +99,7 @@ struct SettingsView: View {
                     }
                     .accentColor(Self.MigrosColor)
                     .alert(isPresented:$showingAlert) {
-                        Alert(title: Text("Are you sure you want to reset?"), message: Text("There is no undo"), primaryButton: .destructive(Text("Reset")) {
+                        Alert(title: Text("Are you sure you want to reset?".t()), message: Text("There is no undo".t()), primaryButton: .destructive(Text("Reset".t())) {
                             self.reset()
                         }, secondaryButton: .cancel())
                     }
@@ -122,6 +121,8 @@ struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             SettingsView(showingAlert: false).environmentObject(ClippyAPI.Instance)
+            SettingsView(showingAlert: false).environmentObject(ClippyAPI.Instance)
+            SettingsView(showingAlert: false).preferredColorScheme(.dark).environmentObject(ClippyAPI.Instance)
         }
     }
 }

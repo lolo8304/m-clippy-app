@@ -36,6 +36,9 @@ public class Locations: Codable, ObservableObject {
     var outside:Int = 3
     var exclusion1:String?
     var exclusion2:String?
+    var isRegional:Bool {
+        return self.regional == 1
+    }
 }
 
 public class Allergies:Codable, ObservableObject {

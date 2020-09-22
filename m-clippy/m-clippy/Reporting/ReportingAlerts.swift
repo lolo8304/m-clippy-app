@@ -13,14 +13,14 @@ struct ReportingAlerts: View {
     
     
     var body: some View {
-        ClippyBox(title: "Alerts", subTitle:"Clippy has alerted you so many times", backColor: SettingsView.MigrosColorCumulus, foreColor: Color.white, image: Image("alerts") ) {
+        ClippyBox(title: "Alerts".t(), subTitle:"Clippy has alerted you so many times".t(), backColor: SettingsView.MigrosColorCumulus, foreColor: Color.white, image: Image("alerts") ) {
             VStack {                
                 HStack {
                     Image("habits-NOK")
                         .resizable()
                         .frame(width: 50, height: 50)
                     VStack(alignment: .leading) {
-                        Text("Eating habits and behaviors").font(.headline)
+                        Text("Eating habits and behaviors".t()).font(.headline)
                     }.padding(.leading, 1)
                     Spacer()
                     Text("\(self.api.reportings.HabitsCounter)").font(.largeTitle)
@@ -30,7 +30,7 @@ struct ReportingAlerts: View {
                         .resizable()
                         .frame(width: 50, height: 50)
                     VStack(alignment: .leading) {
-                        Text("Origin of products").font(.headline)
+                        Text("Origin of products".t()).font(.headline)
                     }.padding(.leading, 1)
                     Spacer()
                     Text("\(self.api.reportings.LocationCounter)").font(.largeTitle)
@@ -40,7 +40,7 @@ struct ReportingAlerts: View {
                         .resizable()
                         .frame(width: 50, height: 50)
                     VStack(alignment: .leading) {
-                        Text("Allergenes in products").font(.headline)
+                        Text("Allergenes in products".t()).font(.headline)
                     }.padding(.leading, 1)
                     Spacer()
                     Text("\(self.api.reportings.AllergyCounter)").font(.largeTitle)

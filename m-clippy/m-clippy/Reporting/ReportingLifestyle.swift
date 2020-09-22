@@ -13,27 +13,27 @@ struct ReportingLifestyle: View {
     
     
     var body: some View {
-        ClippyBox(title: "Target", subTitle:"Clippy shows your real consuming habits", backColor: SettingsView.MigrosColorWhite, foreColor: Color.black, image: Image("target") ) {
+        ClippyBox(title: "Target".t(), subTitle:"Clippy shows your real consuming habits".t(), backColor: SettingsView.MigrosColorWhite, foreColor: Color.black, image: Image("target") ) {
             HStack {
                 VStack(alignment: .leading) {
-                    ClippyBarYesNoBox(title: "Bio",
+                    ClippyBarYesNoBox(title: "Bio".t(),
                                       data: [self.api.reportings.BioCounter, self.api.reportings.NotBioCounter],
-                                      text: ["# \(Int(self.api.reportings.BioCounter))", "\(Int(self.api.reportings.NotBioCounter)) Others"])
+                                      text: ["# \(Int(self.api.reportings.BioCounter))", "\(Int(self.api.reportings.NotBioCounter)) "+"Others".t()])
 
-                    ClippyBarYesNoBox(title: "Vegetarian",
+                    ClippyBarYesNoBox(title: "Vegetarian".t(),
                                       data: [self.api.reportings.VegetarianCounter, self.api.reportings.NotVegetarianCounter],
-                                      text: ["# \(Int(self.api.reportings.VegetarianCounter))", "\(Int(self.api.reportings.NotVegetarianCounter)) Others"])
+                                      text: ["# \(Int(self.api.reportings.VegetarianCounter))", "\(Int(self.api.reportings.NotVegetarianCounter)) "+"Others".t()])
                     
                 }.frame(width: UIScreen.screenWidth / 2 - 2 * 18, alignment: .leading)
                 Spacer()
                 VStack(alignment: .leading) {
-                    ClippyBarYesNoBox(title: "Vegan",
+                    ClippyBarYesNoBox(title: "Vegan".t(),
                                       data: [self.api.reportings.VeganCounter, self.api.reportings.NotVeganCounter],
-                                      text: ["# \(Int(self.api.reportings.VeganCounter))", "\(Int(self.api.reportings.NotVeganCounter)) Others"])
+                                      text: ["# \(Int(self.api.reportings.VeganCounter))", "\(Int(self.api.reportings.NotVeganCounter)) "+"Others".t()])
                     
-                    ClippyBarYesNoBox(title: "Allergens",
+                    ClippyBarYesNoBox(title: "Allergens".t(),
                                       data: [self.api.reportings.BioCounter, self.api.reportings.NotBioCounter],
-                                      text: ["# \(Int(self.api.reportings.BioCounter))", "\(Int(self.api.reportings.NotBioCounter)) Others"])
+                                      text: ["# \(Int(self.api.reportings.BioCounter))", "\(Int(self.api.reportings.NotBioCounter)) "+"Others".t()])
                     
                 }.frame(width: UIScreen.screenWidth / 2 - 2 * 18, alignment: .leading)
                 

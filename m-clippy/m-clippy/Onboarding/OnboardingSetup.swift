@@ -11,23 +11,25 @@ struct OnboardingSetup: View {
     @EnvironmentObject var api:ClippyAPI
     
     var body: some View {
-        ScrollView {
-            ClippyImageHeader()
-            VStack {
-                OnboardingHabits().environmentObject(api)
-                OnboardingLocations().environmentObject(api)
-                OnboardingAllergies().environmentObject(api)
+        ZStack {
+            ScrollView {
+                ClippyImageHeader()
+                VStack {
+                    OnboardingHabits().environmentObject(api)
+                    OnboardingLocations().environmentObject(api)
+                    OnboardingAllergies().environmentObject(api)
+                    Spacer()
+                }
+                .padding(.all, 0)
+                .navigationBarTitle(Text("Settings \(self.api.user.Name())"))
+                .navigationViewStyle(StackNavigationViewStyle())
+                /*.navigationBarItems(
+                    trailing: HStack {
+                        Button(action:done, label: { Text("Done") })
+                    }
+                )*/
                 Spacer()
             }
-            .padding(.all, 0)
-            .navigationBarTitle(Text("Settings \(self.api.user.Name())"))
-            .navigationViewStyle(StackNavigationViewStyle())
-            /*.navigationBarItems(
-                trailing: HStack {
-                    Button(action:done, label: { Text("Done") })
-                }
-            )*/
-            Spacer()
         }
     }
     

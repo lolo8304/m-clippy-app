@@ -13,14 +13,14 @@ struct ReportingSustainability: View {
     
     
     var body: some View {
-        ClippyBox(title: "Sustainability", subTitle:"Clippy tells CO2 equivalent to", backColor: SettingsView.MigrosColorWhite, foreColor: Color.black, image: Image("recycling") ) {
+        ClippyBox(title: "Sustainability".t(), subTitle:"Clippy tells CO2 equivalent to".t(), backColor: SettingsView.MigrosColorWhite, foreColor: Color.black, image: Image("recycling") ) {
             VStack {
                 HStack {
                     Image("cars")
                         .resizable()
                         .frame(width: 50, height: 50)
                     VStack(alignment: .leading) {
-                        Text("km you could drive").font(.headline)
+                        Text("km you could drive".t()).font(.headline)
                     }.padding(.leading, 1)
                     Spacer()
                     Text("\(self.api.reportings.PlanesKm)").font(.largeTitle)
@@ -30,7 +30,7 @@ struct ReportingSustainability: View {
                         .resizable()
                         .frame(width: 50, height: 50)
                     VStack(alignment: .leading) {
-                        Text("Miles you could fly").font(.headline)
+                        Text("Miles you could fly".t()).font(.headline)
                     }.padding(.leading, 1)
                     Spacer()
                     Text("\(self.api.reportings.CarKm)").font(.largeTitle)
@@ -40,7 +40,7 @@ struct ReportingSustainability: View {
                         .resizable()
                         .frame(width: 50, height: 50)
                     VStack(alignment: .leading) {
-                        Text("No of countries from your products").font(.headline)
+                        Text("No of countries from your products".t()).font(.headline)
                     }.padding(.leading, 1)
                     Spacer()
                     Text("\(self.api.reportings.CountriesCounter)").font(.largeTitle)

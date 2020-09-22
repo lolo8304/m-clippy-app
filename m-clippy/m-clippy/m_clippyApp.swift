@@ -49,3 +49,24 @@ extension Double {
         return String(format: "%\(f)f", self)
     }
 }
+
+
+extension String {
+    public func t() -> String {
+        return NSLocalizedString(self, comment:self)
+    }
+    public func t(text: String) -> String {
+        return NSLocalizedString(self, value: text, comment:self)
+    }
+
+    public func tp(_ parameters: CVarArg...) -> String {
+        return String(format: self.t(), arguments: parameters)
+    }
+    public func tp(text: String, _ parameters: CVarArg...) -> String {
+        return String(format: self.t(text: text), arguments: parameters)
+    }
+}
+
+extension Color {
+    static let offWhite = Color(red: 225 / 255, green: 225/255, blue: 235 / 255)
+}

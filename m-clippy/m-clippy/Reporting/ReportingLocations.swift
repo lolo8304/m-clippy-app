@@ -13,14 +13,14 @@ struct ReportingLocations: View {
     
     //self.api.reportings.RegionalSum, self.api.reportings.NationalSum, self.api.reportings.OutsideSum
     var body: some View {
-        ClippyBox(title: "Origin of products", subTitle:"Clippy tells you where you spend most of your money", backColor: SettingsView.MigrosColorWhite, foreColor: Color.black, image: Image("location-OK") ) {
+        ClippyBox(title: "Origin of products".t(), subTitle:"Clippy tells you where you spend most of your money".t(), backColor: SettingsView.MigrosColorWhite, foreColor: Color.black, image: Image("location-OK") ) {
             VStack {
                 HStack {
                     Image("zurich")
                         .resizable()
                         .frame(width: 50, height: 50)
                     VStack(alignment: .leading) {
-                        Text("Regional").font(.headline)
+                        Text("Regional".t()).font(.headline)
                     }.padding(.leading, 1)
                     Spacer()
                     Text("\(Int(self.api.reportings.RegionalSum)) CHF").font(.title)
@@ -30,7 +30,7 @@ struct ReportingLocations: View {
                         .resizable()
                         .frame(width: 50, height: 50)
                     VStack(alignment: .leading) {
-                        Text("Swiss product").font(.headline)
+                        Text("Swiss product".t()).font(.headline)
                     }.padding(.leading, 1)
                     Spacer()
                     Text("\(Int(self.api.reportings.NationalSum)) CHF").font(.title)
@@ -40,7 +40,7 @@ struct ReportingLocations: View {
                         .resizable()
                         .frame(width: 50, height: 50)
                     VStack(alignment: .leading) {
-                        Text("Outside of Switzerland").font(.headline)
+                        Text("Outside of Switzerland".t()).font(.headline)
                     }.padding(.leading, 1)
                     Spacer()
                     Text("\(Int(self.api.reportings.OutsideSum)) CHF").font(.title)

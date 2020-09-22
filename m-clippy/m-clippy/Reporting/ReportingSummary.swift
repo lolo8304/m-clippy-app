@@ -21,11 +21,11 @@ struct ReportingSummary: View {
 
 
     var body: some View {
-        ClippyBox(title: "Summary", subTitle:"Clippy tells if you have reached your objectives", backColor: SettingsView.MigrosColorCumulus, foreColor: Color.white, image: Image("flag") ) {
+        ClippyBox(title: "Summary".t(), subTitle:"Clippy tells if you have reached your objectives".t(), backColor: SettingsView.MigrosColorCumulus, foreColor: Color.white, image: Image("flag") ) {
             HStack {
                 VStack {
                     CardView {
-                            ChartLabel("Success", type: .subTitle)
+                        ChartLabel("Success".t(), type: .subTitle)
                         PieChart().padding(10)
                         }
                         .data([self.score, self.antiScore])
@@ -35,12 +35,12 @@ struct ReportingSummary: View {
 
                 }.frame(width: UIScreen.screenWidth / 2 - 2 * 18, alignment: .leading)
                 VStack {
-                    Text("\(self.score)% is based on your last shopping carts.")
-                    Text("We count violations from your products and your preferences:")
+                    Text("%@% is based on your last shopping carts.".tp(self.score))
+                    Text("We count violations from your products and your preferences:".t())
                     Text(" ")
-                    Text ("- Habits")
-                    Text ("- Location")
-                    Text ("- Allergenes")
+                    Text ("- Habits".t())
+                    Text ("- Location".t())
+                    Text ("- Allergenes".t())
                 }
                 .padding(0).clipped()
                 .fixedSize(horizontal: false, vertical: true)

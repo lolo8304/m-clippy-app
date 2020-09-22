@@ -25,7 +25,7 @@ struct Reporting: View {
                 Spacer()
             }
             .padding(EdgeInsets(top: 18, leading: 0, bottom: 18, trailing: 0))
-            .navigationBarTitle(Text("Clippies \(self.api.user.Name())"))
+            .navigationBarTitle(Text("Clippies %@".tp(self.api.user.Name())))
             .navigationViewStyle(StackNavigationViewStyle())
             /*.navigationBarItems(
                 trailing: HStack {

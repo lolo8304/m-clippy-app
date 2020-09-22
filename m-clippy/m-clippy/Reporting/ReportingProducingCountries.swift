@@ -33,7 +33,7 @@ struct ReportingProducingCountries: View {
     }
     
     var body: some View {
-        ClippyBox(title: "Producing countries", subTitle:"Clippy shows you where the products have been produced", backColor: SettingsView.MigrosColor, foreColor: Color.white, image: Image("world") ) {
+        ClippyBox(title: "Producing countries".t(), subTitle:"Clippy shows you where the products have been produced".t(), backColor: SettingsView.MigrosColor, foreColor: Color.white, image: Image("world") ) {
             ForEach(self.producingKeys.indices) { i in
                 HStack {
                     VStack(alignment: .leading) {

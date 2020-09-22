@@ -21,7 +21,7 @@ struct ReportingViolations: View {
 
     
     var body: some View {
-        ClippyBox(title: "Recommandation", subTitle:"Clippy will help you to find alternative products", backColor: SettingsView.MigrosColorWhite, foreColor: Color.black, image: Image("shopping-cart") ) {
+        ClippyBox(title: "Recommandation".t(), subTitle:"Clippy will help you to find alternative products".t(), backColor: SettingsView.MigrosColorWhite, foreColor: Color.black, image: Image("shopping-cart") ) {
             
             ForEach(self.violetedProducts.indices) { i in
                 if (i < 8) {

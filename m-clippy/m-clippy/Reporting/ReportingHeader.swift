@@ -13,7 +13,7 @@ struct ReportingHeader: View {
             HStack {
                 HStack {
                     Spacer()
-                    Text("1 Week").foregroundColor(.gray)
+                    Text("1 Week".t()).foregroundColor(.gray)
                     Spacer()
                 }
                 .frame(height:40, alignment: .center)
@@ -23,7 +23,7 @@ struct ReportingHeader: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .padding(8)
-                    Text("1 Month")
+                    Text("1 Month".t())
                     Spacer()
                 }
                 .frame(height:40, alignment: .center)
@@ -31,7 +31,7 @@ struct ReportingHeader: View {
                 .border(Color.gray, width: 0.3)
                 HStack {
                     Spacer()
-                    Text("This Year").foregroundColor(.gray)
+                    Text("This Year".t()).foregroundColor(.gray)
                     Spacer()
                 }
                 .frame(height:40, alignment: .center)
@@ -40,7 +40,7 @@ struct ReportingHeader: View {
             .frame(height:40, alignment: .center)
             .border(Color.gray, width: 0.3)
         }.frame(height:100, alignment: .center)
-        Text("Clippy uses your Cumulus data in realtime to give you insights about your consumption  expectations and true behaviors.").padding(.init(top:4, leading: 18, bottom: 4, trailing: 18))
+        Text("reporting.intro".t(text: "Clippy uses your Cumulus data in realtime to give you insights about your consumption  expectations and true behaviors.")).padding(.init(top:4, leading: 18, bottom: 4, trailing: 18))
     }
 }
 
