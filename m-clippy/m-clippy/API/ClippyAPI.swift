@@ -84,8 +84,8 @@ public class User: Decodable, Encodable, ObservableObject, Identifiable, Hashabl
 
 public class ClippyAPI: ObservableObject {
     static var Instance:ClippyAPI = ClippyAPI()
-    //static var Endpoint:String = "https://m-clippy.azurewebsites.net";
-    static var Endpoint:String = "http://localhost:5000";
+    static var Endpoint:String = "https://m-clippy.azurewebsites.net";
+    //static var Endpoint:String = "http://localhost:5000";
 
     public var staticExcludedCountries:[String] = [
         "China",
