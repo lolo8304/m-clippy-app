@@ -46,13 +46,22 @@ public class Allergies:Codable, ObservableObject {
 }
 
 public class User: Decodable, Encodable, ObservableObject, Identifiable, Hashable, Equatable {
-    static var UserId:String = "b6adb9a1-9f93-49b9-8793-d6f91d44e4a3"
+    static var DefaultUserId:String = "b6adb9a1-9f93-49b9-8793-d6f91d44e4a3"
+    //static var UserIds:[String] = [DefaultUserId, "30fa3852-3f8f-47ce-ad4a-72cbb6356d7f", "4f124c26-50ff-4775-96cb-d95360631e00"]
+    //static var UserIds:[String] = ["30fa3852-3f8f-47ce-ad4a-72cbb6356d7f"]
+    //static var UserIds:[Int] = Array(102000...103000)
+    static var UserIds:[Int] = [102356]
+    static var UserId:String = "\(UserIds.randomElement() ?? 102532)"
 
     public static func == (lhs: User, rhs: User) -> Bool {
         return lhs.id == rhs.id
     }
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
+    }
+    
+    static public func RandomizeUserId() {
+        UserId = "\(UserIds.randomElement() ?? 102000)"
     }
     
     public var id:String = UserId
@@ -75,6 +84,8 @@ public class User: Decodable, Encodable, ObservableObject, Identifiable, Hashabl
 
 public class ClippyAPI: ObservableObject {
     static var Instance:ClippyAPI = ClippyAPI()
+    //static var Endpoint:String = "https://m-clippy.azurewebsites.net";
+    static var Endpoint:String = "http://localhost:5000";
 
     public var staticExcludedCountries:[String] = [
         "China",
@@ -101,7 +112,7 @@ public class ClippyAPI: ObservableObject {
     }
     
     func GetUser(completion: @escaping (User) ->()) {
-        guard let url = URL(string: "https://m-clippy.azurewebsites.net/api/onboarding/users/\(User.UserId)") else { return }
+        guard let url = URL(string: "\(Self.Endpoint)/api/onboarding/users/\(User.UserId)") else { return }
         URLSession.shared.dataTask(with: url) { (data, _, _) in
             let user = try! JSONDecoder().decode(User.self, from: data!)
             DispatchQueue.main.async {
@@ -112,7 +123,7 @@ public class ClippyAPI: ObservableObject {
     }
     
     func GetReportings(completion: @escaping (Reportings) ->()) {
-        guard let url = URL(string: "https://m-clippy.azurewebsites.net/api/reporting/purchases/\(User.UserId)") else { return }
+        guard let url = URL(string: "\(Self.Endpoint)/api/reporting/purchases/\(User.UserId)") else { return }
         URLSession.shared.dataTask(with: url) { (data, _, _) in
             let reporting = try! JSONDecoder().decode(Reportings.self, from: data!)
             DispatchQueue.main.async {
@@ -123,7 +134,7 @@ public class ClippyAPI: ObservableObject {
     }
     
     func GetMetaDataAllergens(completion: @escaping (Allergens) ->()) {
-        guard let url = URL(string: "https://m-clippy.azurewebsites.net/api/metadata/allergens") else { return }
+        guard let url = URL(string: "\(Self.Endpoint)/api/metadata/allergens") else { return }
         URLSession.shared.dataTask(with: url) { (data, _, _) in
             let allergens = try! JSONDecoder().decode(Allergens.self, from: data!)
             allergens.list = allergens.list.sorted {
@@ -143,7 +154,7 @@ public class ClippyAPI: ObservableObject {
     
     func UpdateUser(user: User, completion: @escaping (Result<User, APIError>) ->()) {
         do {
-            guard let url = URL(string: "https://m-clippy.azurewebsites.net/api/onboarding/users/\(User.UserId)") else { return }
+            guard let url = URL(string: "\(Self.Endpoint)/api/onboarding/users/\(User.UserId)") else { return }
             var urlRequest = URLRequest(url: url)
             urlRequest.httpMethod = "PUT"
             urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")

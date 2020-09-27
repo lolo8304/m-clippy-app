@@ -85,8 +85,8 @@ struct SettingsView: View {
                         .aspectRatio(contentMode: .fit)
                         .padding(0)
 
-                    Text("main.intro".t())
-                        
+                    Text("Which kind of consumer are you? Set the preferences and Clippy will help you with some tips - especially in the areas eating habits, origin of products and allergies.".t())
+
                 }.padding(.init(top: 18, leading: 18, bottom: 18, trailing: 18))
             }
             .navigationBarTitle(Text("Profile: %@".tp(self.api.user.Name())))
@@ -111,9 +111,16 @@ struct SettingsView: View {
         }
     }
     func reset() {
+        User.RandomizeUserId()
         ClippyAPI.Instance.GetUser { (user) in
-            //self.user = user
+            self.api.user = user
         }
+        ClippyAPI.Instance.GetMetaDataAllergens(completion: { (allergens) in
+            self.api.staticAllergenes = allergens
+        })
+        ClippyAPI.Instance.GetReportings(completion: { (reportings) in
+            self.api.reportings = reportings
+        })
     }
 }
 

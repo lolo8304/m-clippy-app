@@ -37,10 +37,10 @@ struct ReportingAllergens: View {
             ForEach(self.allergenTexts.indices) { i in
                 HStack {
                     VStack(alignment: .leading) {
-                        Text("\(self.allergenTexts[i])").font(.headline)
+                        Text("\( (i < self.allergenTexts.count) ? self.allergenTexts[i] : "-")").font(.headline)
                     }.padding(.leading, 1)
                     Spacer()
-                    Text("\(self.allergenValues[i])").font(.largeTitle)
+                    Text("\( (i < self.allergenValues.count) ? self.allergenValues[i] : 0)").font(.largeTitle)
                 }
             }.padding(.init(top:2, leading: 0, bottom: 2, trailing: 8))
             .foregroundColor(Color.black)

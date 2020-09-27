@@ -37,10 +37,10 @@ struct ReportingProducingCountries: View {
             ForEach(self.producingKeys.indices) { i in
                 HStack {
                     VStack(alignment: .leading) {
-                        Text("\(self.producingKeys[i])").font(.headline)
+                        Text("\( (i < self.producingKeys.count) ? self.producingKeys[i] : "-")").font(.headline)
                     }.padding(.leading, 1)
                     Spacer()
-                    Text("\(self.producingValues[i])").font(.largeTitle)
+                    Text("\( (i < self.producingValues.count) ? self.producingValues[i] : 0)").font(.largeTitle)
                 }
             }.padding(.init(top:0, leading: 0, bottom: 0, trailing: 8))
             .foregroundColor(Color.white)
