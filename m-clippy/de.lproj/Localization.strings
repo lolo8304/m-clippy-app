@@ -8,55 +8,55 @@
 "%@ CHF" = "%@ CHF";
 
 /* No comment provided by engineer. */
-"%@% is based on your last shopping carts." = "%1$@%2$ is based on your last shopping carts.";
+"%@% is based on your last shopping carts." = "%1$@%2$ basiert auf den letzten Einkäufen.";
 
 /* No comment provided by engineer. */
 "%@, %@ CHF" = "%1$@, %2$@ CHF";
 
 /* No comment provided by engineer. */
-"- Allergenes" = "- Allergenes";
+"- Allergenes" = "- Allergene";
 
 /* No comment provided by engineer. */
 "- Habits" = "- Habits";
 
 /* No comment provided by engineer. */
-"- Location" = "- Location";
+"- Location" = "- Produktherkunft";
 
 /* No comment provided by engineer. */
-"1 Month" = "1 Month";
+"1 Month" = "1 Monat";
 
 /* No comment provided by engineer. */
-"1 Week" = "1 Week";
+"1 Week" = "1 Woche";
 
 /* No comment provided by engineer. */
 "100 CHF" = "100 CHF";
 
 /* No comment provided by engineer. */
-"Allergenes in products" = "Allergenes in products";
+"Allergenes in products" = "Allergene in Produkte";
 
 /* No comment provided by engineer. */
-"Are you sure you want to reset?" = "Are you sure you want to reset?";
+"Are you sure you want to reset?" = "Sind Sie sicher dass Sie zurücksetzen wollen?";
 
 /* No comment provided by engineer. */
 "Bio" = "Bio";
 
 /* No comment provided by engineer. */
-"Choose to exclude" = "Choose to exclude";
+"Choose to exclude" = "Schliesen Sie Länder aus";
 
 /* No comment provided by engineer. */
 "Clippies %@" = "Clippies %@";
 
 /* No comment provided by engineer. */
-"Collection period" = "Collection period";
+"Collection period" = "Zeitraum";
 
 /* No comment provided by engineer. */
-"Cumulus-Points" = "Cumulus-Points";
+"Cumulus-Points" = "Cumulus-Punkte";
 
 /* No comment provided by engineer. */
-"Done" = "Done";
+"Done" = "Fertig";
 
 /* No comment provided by engineer. */
-"Eating habits and behaviors" = "Eating habits and behaviors";
+"Eating habits and behaviors" = "Essgewohnheiten und Verhaltensweisen";
 
 /* No comment provided by engineer. */
 "Hello Blue" = "Hello Blue";
@@ -71,7 +71,7 @@
 "Hello, World!" = "Hello, World!";
 
 /* No comment provided by engineer. */
-"km you could drive" = "km you could drive";
+"km you could drive" = "identisch mit gefahrenen km";
 
 /* No comment provided by engineer. */
 "m-Clippy Onboarding" = "m-Clippy Onboarding";
@@ -80,76 +80,76 @@
 "m-Clippy Tips!" = "m-Clippy Tips!";
 
 /* No comment provided by engineer. */
-"main.intro" = "main.intro";
+"main.setup" = "Which kind of consumer are you? Set the preferences and Clippy will help you with some tips - especially in the areas eating habits, origin of products and allergies.";
 
 /* No comment provided by engineer. */
 "Messages" = "Messages";
 
 /* No comment provided by engineer. */
-"Miles you could fly" = "Miles you could fly";
+"Miles you could fly" = "identisch wie geflogene Meilen";
 
 /* No comment provided by engineer. */
-"No of countries from your products" = "No of countries from your products";
+"No of countries from your products" = "Anzahl Länder Ihrer Produkt im Einkaufskorb";
 
 /* No comment provided by engineer. */
-"Origin of products" = "Origin of products";
+"Origin of products" = "Herkunft der Produkte";
 
 /* No comment provided by engineer. */
-"Outside" = "Outside";
+"Outside" = "Ausserhalb";
 
 /* No comment provided by engineer. */
-"Outside of Switzerland" = "Outside of Switzerland";
+"Outside of Switzerland" = "Ausserhalb der Schweiz";
 
 /* No comment provided by engineer. */
 "Product abc" = "Product abc";
 
 /* No comment provided by engineer. */
-"Profile: %@" = "Profile %@";
+"Profile: %@" = "Profil: %@";
 
 /* No comment provided by engineer. */
 "Regional" = "Regional";
 
 /* No comment provided by engineer. */
-"Reset" = "Reset";
+"Reset" = "Zurücksetzen";
 
 /* No comment provided by engineer. */
-"Settings" = "Settings";
+"Settings" = "Einstellungen";
 
 /* No comment provided by engineer. */
-"Settings %@" = "Settings %@";
+"Settings %@" = "Einstellungen %@";
 
 /* No comment provided by engineer. */
-"Swiss" = "Swiss";
+"Swiss" = "Schweizer";
 
 /* No comment provided by engineer. */
-"Swiss product" = "Swiss product";
+"Swiss product" = "Schweizer Produkte";
 
 /* No comment provided by engineer. */
-"Tell Clippy what your preferences are." = "Tell Clippy what your preferences are.";
+"Tell Clippy what your preferences are." = "Erfassen Sie hier für Clippy Ihre Einstellungn.";
 
 /* No comment provided by engineer. */
-"There is no undo" = "There is no undo";
+"There is no undo" = "Es gibt kein Weg zurück!";
 
 /* No comment provided by engineer. */
-"This Year" = "This Year";
+"This Year" = "Dieses Jahr";
 
 /* No comment provided by engineer. */
 "Vegan" = "Vegan";
 
 /* No comment provided by engineer. */
-"Vegetarian" = "Vegetarian";
+"Vegetarian" = "Vegetarier";
 
 /* No comment provided by engineer. */
-"We count violations from your products and your preferences:" = "We count violations from your products and your preferences:";
+"We count violations from your products and your preferences:" = "Wir zeigen Ihnen We count violations from your products and your preferences:";
 
 /* No comment provided by engineer. */
-"You selected: %@" = "You selected: %@";
+"Which kind of consumer are you? Set the preferences and Clippy will help you with some tips - especially in the areas eating habits, origin of products and allergies." = "Which kind of consumer are you? Set the preferences and Clippy will help you with some tips - especially in the areas eating habits, origin of products and allergies.de";
 
 /* No comment provided by engineer. */
-"reporting.intro" = "Clippy uses your Cumulus data in realtime to give you insights about your consumption  expectations and true behaviors.";
+"You selected: %@" = "Sie haben selektiert: %@";
 
 /* No comment provided by engineer. */
-"main.intro" = "Which kind of consumer are you? Set the preferences and Clippy will help you with some tips - especially in the areas eating habits, origin of products and allergies.";
+"reporting.intro" = "Clippy benutzt alle Cumulus Daten in Echtzeit und Sie erhalten Einblicke über Ihre gekaufen Produkte, die Allergene in den Produkten und die Herkunft der Produkte.";
 
 /* No comment provided by engineer. */
 "Clippy tells you where you spend most of your money" = "Clippy tells you where you spend most of your money";
