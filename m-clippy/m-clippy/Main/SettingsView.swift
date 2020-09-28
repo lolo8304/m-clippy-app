@@ -29,16 +29,35 @@ struct SettingsView: View {
     @EnvironmentObject var api:ClippyAPI
     //@EnvironmentObject var user:User
     @State var showingAlert:Bool
+    var loaded:Bool {
+        return self.api.loaded
+    }
         
     var body: some View {
         NavigationView {
             VStack {
-                Text("\(self.api.user.points ?? "0")").font(.largeTitle)
+                ZStack {
+                    Text("\(self.api.user.points ?? "0")").font(.largeTitle)
+                    if (!self.api.loaded) {
+                        HStack {
+                            Spacer()
+                            Image(systemName: "arrow.counterclockwise.circle")
+                                .resizable()
+                                .frame(width: 30, height: 30, alignment: .center)
+                                .aspectRatio(contentMode: .fit)
+                                .padding(0)
+                        }.padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+                    }
+                }.padding(0)
                 Text("Cumulus-Points".t())
                     .font(.caption)
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     .foregroundColor(Self.MigrosColor)
-                Text("Collection period".t()).font(.caption).padding(0)
+                HStack {
+                    Text("Collection period".t()).font(.caption)
+                    Text("\(Date(), formatter: Text.DateFormatMMYYYY)").font(.caption)
+                    
+                }.padding(0)
                 Image("cumulus")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -66,17 +85,28 @@ struct SettingsView: View {
                 .frame(height:40, alignment: .center)
                 .border(Color.gray, width: 0.3)
                 List {
-                    NavigationLink(destination:
-                                    OnboardingSetup().environmentObject(api)) {
-                        Text("m-Clippy Onboarding".t())
+                    Section(header: Text("m-clippy")) {
+                        if (self.api.loadedUser) {
+
+                            NavigationLink(destination:
+                                            OnboardingSetup().environmentObject(api)) {
+                                Text("Onboarding".t())
+                            }
+                            NavigationLink(destination:
+                                            OnboardingSetup().environmentObject(api)) {
+                                Text("Scanning".t())
+                            }
+                        }
+                        if (self.api.loaded) {
+                            NavigationLink(destination:
+                                            Reporting()
+                                                .environmentObject(api)
+                                    ) {
+                                Text("Tips!".t())
+                            }
+                        }
                     }
-                    NavigationLink(destination:
-                                    Reporting()
-                                        .environmentObject(api)
-                            ) {
-                        Text("m-Clippy Tips!".t())
-                    }
-                }
+                }.listStyle(GroupedListStyle())
                 Spacer()
                 HStack {
                     Image("logo")
@@ -86,8 +116,9 @@ struct SettingsView: View {
                         .padding(0)
 
                     Text("Which kind of consumer are you? Set the preferences and Clippy will help you with some tips - especially in the areas eating habits, origin of products and allergies.".t())
+                        .padding(0)
 
-                }.padding(.init(top: 18, leading: 18, bottom: 18, trailing: 18))
+                }.padding(.init(top: 0, leading: 18, bottom: 0, trailing: 18))
             }
             .navigationBarTitle(Text("Profile: %@".tp(self.api.user.Name())))
             .navigationBarItems(
@@ -107,19 +138,27 @@ struct SettingsView: View {
             )
         }
         .onAppear() {
-            self.reset()
+            //self.reset()
         }
     }
     func reset() {
         User.RandomizeUserId()
+        self.api.loaded = false
+        self.api.loadedUser = false
         ClippyAPI.Instance.GetUser { (user) in
             self.api.user = user
         }
         ClippyAPI.Instance.GetMetaDataAllergens(completion: { (allergens) in
-            self.api.staticAllergenes = allergens
+            DispatchQueue.main.async {
+                self.api.staticAllergenes = allergens
+                self.api.loadedUser = true
+            }
         })
         ClippyAPI.Instance.GetReportings(completion: { (reportings) in
-            self.api.reportings = reportings
+            DispatchQueue.main.async {
+                self.api.reportings = reportings
+                self.api.loaded = true
+            }
         })
     }
 }

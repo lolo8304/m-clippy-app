@@ -70,3 +70,18 @@ extension String {
 extension Color {
     static let offWhite = Color(red: 225 / 255, green: 225/255, blue: 235 / 255)
 }
+
+extension Text {
+    static let DateFormatDDMMYYYY: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.YYYY"
+        formatter.locale = Locale(identifier: "de")
+        return formatter
+    }()
+    static let DateFormatMMYYYY: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM.YYYY"
+        formatter.locale = Locale(identifier: "de")
+        return formatter
+    }()
+}

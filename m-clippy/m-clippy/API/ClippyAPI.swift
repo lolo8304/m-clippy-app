@@ -46,11 +46,8 @@ public class Allergies:Codable, ObservableObject {
 }
 
 public class User: Decodable, Encodable, ObservableObject, Identifiable, Hashable, Equatable {
-    static var DefaultUserId:String = "b6adb9a1-9f93-49b9-8793-d6f91d44e4a3"
-    //static var UserIds:[String] = [DefaultUserId, "30fa3852-3f8f-47ce-ad4a-72cbb6356d7f", "4f124c26-50ff-4775-96cb-d95360631e00"]
-    //static var UserIds:[String] = ["30fa3852-3f8f-47ce-ad4a-72cbb6356d7f"]
-    //static var UserIds:[Int] = Array(102000...103000)
-    static var UserIds:[Int] = [102356]
+    //static var UserIds:[Int] = [102356, 102958, 102532, 102910, 102231, 102049, 102215, 102215, 102418, 102445]
+    static var UserIds:[Int] = []
     static var UserId:String = "\(UserIds.randomElement() ?? 102532)"
 
     public static func == (lhs: User, rhs: User) -> Bool {
@@ -98,39 +95,70 @@ public class ClippyAPI: ObservableObject {
     @ObservedObject var user:User = DemoUser() { didSet { objectWillChange.send() }}
     @ObservedObject var staticAllergenes:Allergens = Allergens() { didSet { objectWillChange.send() }}
     @ObservedObject var reportings:Reportings = Reportings() { didSet { objectWillChange.send() }}
+    public var loaded:Bool = false
+    public var loadedUser:Bool = false
 
     public init() {
+        self.loaded = false
+        self.loadedUser = false
         GetUser(completion: { (newUser) in
             self.user = newUser
         })
         GetMetaDataAllergens(completion: { (allergens) in
-            self.staticAllergenes = allergens
+            DispatchQueue.main.async {
+                self.staticAllergenes = allergens
+                self.loadedUser = true
+            }
         })
         GetReportings(completion: { (reportings) in
-            self.reportings = reportings
+            DispatchQueue.main.async {
+                self.reportings = reportings
+                self.loaded = true
+            }
         })
     }
     
     func GetUser(completion: @escaping (User) ->()) {
-        guard let url = URL(string: "\(Self.Endpoint)/api/onboarding/users/\(User.UserId)") else { return }
+        guard let url = URL(string: "\(Self.Endpoint)/api/onboarding/users/\(User.UserId)") else {
+            DispatchQueue.main.async {
+                completion(Self.DemoUser())
+            }
+            return
+        }
         URLSession.shared.dataTask(with: url) { (data, _, _) in
+            if (data == nil) {
+                DispatchQueue.main.async {
+                    completion(Self.DemoUser())
+                }
+                return;
+            }
             let user = try! JSONDecoder().decode(User.self, from: data!)
             DispatchQueue.main.async {
                 completion(user)
             }
-            
         }.resume()
     }
     
     func GetReportings(completion: @escaping (Reportings) ->()) {
-        guard let url = URL(string: "\(Self.Endpoint)/api/reporting/purchases/\(User.UserId)") else { return }
+        guard let url = URL(string: "\(Self.Endpoint)/api/reporting/purchases/\(User.UserId)") else {
+            DispatchQueue.main.async {
+                completion(Reportings())
+            }
+            return
+        }
         URLSession.shared.dataTask(with: url) { (data, _, _) in
+            if (data == nil) {
+                DispatchQueue.main.async {
+                    completion(Reportings())
+                }
+                return;
+            }
             let reporting = try! JSONDecoder().decode(Reportings.self, from: data!)
             DispatchQueue.main.async {
                 completion(reporting)
             }
-            
         }.resume()
+
     }
     
     func GetMetaDataAllergens(completion: @escaping (Allergens) ->()) {
