@@ -31,6 +31,7 @@
 		E17A3D272516C28700C1E1BF /* ReportingSustainability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17A3D262516C28700C1E1BF /* ReportingSustainability.swift */; };
 		E17A3D2A2516C68C00C1E1BF /* ReportingLifestyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17A3D292516C68C00C1E1BF /* ReportingLifestyle.swift */; };
 		E17A3D2D2516D0B800C1E1BF /* ReportingViolations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17A3D2C2516D0B800C1E1BF /* ReportingViolations.swift */; };
+		E1A9E6F02529BB9300936B6F /* beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = E1A9E6EF2529BB9300936B6F /* beep.wav */; };
 		E1C4E8B1251A4212006FB119 /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1C4E8B3251A4212006FB119 /* Localization.strings */; };
 		E1F5C556251677E200EE284F /* OnboardingLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5C555251677E200EE284F /* OnboardingLocations.swift */; };
 		E1F5C5592516805500EE284F /* OnboardingAllergies.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5C5582516805500EE284F /* OnboardingAllergies.swift */; };
@@ -64,6 +65,7 @@
 		E17A3D262516C28700C1E1BF /* ReportingSustainability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportingSustainability.swift; sourceTree = "<group>"; };
 		E17A3D292516C68C00C1E1BF /* ReportingLifestyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportingLifestyle.swift; sourceTree = "<group>"; };
 		E17A3D2C2516D0B800C1E1BF /* ReportingViolations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportingViolations.swift; sourceTree = "<group>"; };
+		E1A9E6EF2529BB9300936B6F /* beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beep.wav; sourceTree = "<group>"; };
 		E1C4E8B2251A4212006FB119 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
 		E1C4E8B7251A45C4006FB119 /* de */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localization.strings; sourceTree = "<group>"; };
 		E1F5C555251677E200EE284F /* OnboardingLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLocations.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 		E14F9AD52515A53E00D110CE = {
 			isa = PBXGroup;
 			children = (
+				E1A9E6EE2529BB8200936B6F /* Sounds */,
 				E1C4E8B3251A4212006FB119 /* Localization.strings */,
 				E14F9AE02515A53E00D110CE /* m-clippy */,
 				E14F9ADF2515A53E00D110CE /* Products */,
@@ -160,6 +163,14 @@
 				E17A3D212516BCDF00C1E1BF /* ImageView.swift */,
 			);
 			path = ImageView;
+			sourceTree = "<group>";
+		};
+		E1A9E6EE2529BB8200936B6F /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				E1A9E6EF2529BB9300936B6F /* beep.wav */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 		E1C4E896251A1CDC006FB119 /* Components */ = {
@@ -264,6 +275,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1A9E6F02529BB9300936B6F /* beep.wav in Resources */,
 				E14F9AE92515A54000D110CE /* Preview Assets.xcassets in Resources */,
 				E1C4E8B1251A4212006FB119 /* Localization.strings in Resources */,
 				E14F9AE62515A54000D110CE /* Assets.xcassets in Resources */,

@@ -92,12 +92,12 @@ struct SettingsView: View {
                                             OnboardingSetup().environmentObject(api)) {
                                 Text("Onboarding".t())
                             }
-                            NavigationLink(destination:
-                                            OnboardingSetup().environmentObject(api)) {
-                                Text("Scanning".t())
-                            }
                         }
                         if (self.api.loaded) {
+                            NavigationLink(destination:
+                                            ScanningSetup().environmentObject(api)) {
+                                Text("Scanning".t())
+                            }
                             NavigationLink(destination:
                                             Reporting()
                                                 .environmentObject(api)

@@ -13,7 +13,7 @@ import SwiftUICharts
 struct ReportingViolations: View {
     @EnvironmentObject var api: ClippyAPI
     
-    var violetedProducts:[Violation] {
+    var violetedProducts:[ProductViolation] {
         return self.api.reportings.list.filter { (v) -> Bool in
             v.HabitsAlert || v.LocationAlert || v.AllergyAlert
         }

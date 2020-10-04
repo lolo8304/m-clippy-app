@@ -69,6 +69,7 @@ extension String {
 
 extension Color {
     static let offWhite = Color(red: 225 / 255, green: 225/255, blue: 235 / 255)
+    static let scanGray = Color(red: 175 / 255, green: 175/255, blue: 175 / 255)
 }
 
 extension Text {

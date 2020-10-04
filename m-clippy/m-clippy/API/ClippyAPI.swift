@@ -147,13 +147,14 @@ public class ClippyAPI: ObservableObject {
             return
         }
         URLSession.shared.dataTask(with: url) { (data, _, _) in
-            if (data == nil) {
+            let localData = data
+            if (localData == nil || localData!.isEmpty) {
                 DispatchQueue.main.async {
                     completion(Reportings())
                 }
                 return;
             }
-            let reporting = try! JSONDecoder().decode(Reportings.self, from: data!)
+            let reporting = try! JSONDecoder().decode(Reportings.self, from: localData!)
             DispatchQueue.main.async {
                 completion(reporting)
             }
@@ -224,7 +225,7 @@ public class ClippyAPI: ObservableObject {
 
 
 public class Reportings : Codable, ObservableObject {
-    var list:[Violation] = []
+    var list:[ProductViolation] = []
     
     var ProductsAnalyzed:Int = 91
     
@@ -260,7 +261,7 @@ public class Reportings : Codable, ObservableObject {
 
 }
 
-public class Violation : Codable, ObservableObject {
+public class ProductViolation : Codable, ObservableObject {
     var Name:String = ""
     var Thumbnail:String? = "https://alexdunndev.files.wordpress.com/2020/01/empty_app_icon_512.png?w=512&h=510&crop=1"
     var Original:String = "https://alexdunndev.files.wordpress.com/2020/01/empty_app_icon_512.png?w=512&h=510&crop=1"
@@ -269,10 +270,17 @@ public class Violation : Codable, ObservableObject {
     
     var Price:Double = 0.0
     var Quantity:String = "100g"
-    var ArticleID:String = "104223700000"
+    var ArticleID:String = "4042448470942"
     var LocationAlert:Bool = false
-    var HabitsAlert:Bool = true
+    var HabitsAlert:Bool = false
     var AllergyAlert:Bool = false
+    
+    
+    public static func EmptyProduct() -> ProductViolation {
+        let p = ProductViolation()
+        p.Quantity = ""
+        return p
+    }
 }
 
 
