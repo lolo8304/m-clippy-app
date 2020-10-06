@@ -275,6 +275,14 @@ public class ProductViolation : Codable, ObservableObject {
     var HabitsAlert:Bool = false
     var AllergyAlert:Bool = false
     
+    func PriceString() -> String {
+        if (self.Price == 0.0) {
+            return ""
+        } else {
+            return "\(self.Price.format(f:".2")) CHF";
+        }
+    }
+    
     
     public static func EmptyProduct() -> ProductViolation {
         let p = ProductViolation()

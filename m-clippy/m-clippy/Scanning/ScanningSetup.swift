@@ -29,9 +29,9 @@ struct ScanningSetup: View {
     var barcode:String {
         return self.product.ArticleID
     }
-
-    @State private var showBarcode:Bool = true
     
+    @State private var AllergyAlert = false
+
     init() {
         audioScanUrl = Bundle.main.url(forResource: "beep", withExtension: "wav")!
         do {
@@ -55,6 +55,7 @@ struct ScanningSetup: View {
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .padding(20)
+                    .disabled(!self.AllergyAlert)
                 Button("Scan", action: {
                     if (!self.audioMuted) {
                         self.makeScanSound()
@@ -64,7 +65,6 @@ struct ScanningSetup: View {
                     } else {
                         self.barcodeIndex = -1
                     }
-                    self.showBarcode = true
                 })
                 .padding(0)
                 .foregroundColor(.black)
@@ -92,7 +92,7 @@ struct ScanningSetup: View {
             VStack(alignment: .center, spacing: 0, content: {
                 VStack (alignment: .leading, spacing: 0, content: {
                     ImageView(url: self.barcodeUrl, width: UIScreen.screenWidth * 0.4, height: 50)
-                        .disabled(!self.showBarcode)
+                        .disabled(self.product.Name.isEmpty)
                 })
                 .zIndex(1.0)
                 .frame(width: 0, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -103,28 +103,23 @@ struct ScanningSetup: View {
                         ImageView(url: URL(string: self.product.Original)!, width: UIScreen.screenWidth * 0.25, height: 0).padding(0)
                         Spacer(minLength: 1)
                         VStack(alignment: .trailing, spacing: 0, content: {
-                            Text("\(self.product.Name)").font(.headline).padding(0).lineLimit(3).fixedSize(horizontal: false, vertical: true)
+                            Text(self.product.Name).font(.headline).padding(0).lineLimit(3).fixedSize(horizontal: false, vertical: true)
                             Text("\(self.product.Quantity)").font(.subheadline)
-                            Text("\(self.product.Price == 0.0 ? "" : self.product.Price.format(f:".2")) CHF").font(.subheadline)
+                            Text(self.product.PriceString()).font(.subheadline)
                         })
                         .padding(.trailing, 5)
                     })
                     .padding(.top, 10)
                     HStack {
-                        if (self.product.HabitsAlert) {
-                            Image("habits-NOK")
-                                .resizable()
-                                .frame(width: 40, height: 40)
-                        }
-                        if (self.product.LocationAlert) {
-                            Image("location-NOK")
-                                .resizable()
-                                .frame(width: 40, height: 40)
-                        }
                         if (self.product.AllergyAlert) {
                             Image("allergy-NOK")
                                 .resizable()
                                 .frame(width: 40, height: 40)
+                            Button("Alert", action: {
+                                makeAlert()
+                            }).foregroundColor(Color.white)
+                            .padding()
+                            .background(SettingsView.MigrosColor)
                         }
                     }.font(.largeTitle)
                 }.zIndex(2.0)
@@ -141,6 +136,12 @@ struct ScanningSetup: View {
         player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3) */
         DispatchQueue.main.async {
             player!.play()
+        }
+    }
+    func makeAlert() {
+        self.AllergyAlert = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            self.AllergyAlert = false
         }
     }
     
